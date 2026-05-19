@@ -1,0 +1,882 @@
+{
+  "records": {
+    "EURUSD_NEUTRAL_LONDON_-1_9": {
+      "wins": 40,
+      "losses": 4,
+      "pnl": -0.25939999999999785,
+      "trades": 44
+    },
+    "GBPUSD_NEUTRAL_LONDON_-1_9": {
+      "wins": 75,
+      "losses": 0,
+      "pnl": 16.415100000000013,
+      "trades": 75
+    },
+    "USDCHF_NEUTRAL_LONDON_-1_9": {
+      "wins": 14,
+      "losses": 0,
+      "pnl": 1.0614,
+      "trades": 14
+    },
+    "USDCHF_NEUTRAL_LONDON_-1_10": {
+      "wins": 4,
+      "losses": 1,
+      "pnl": -0.0764,
+      "trades": 5
+    },
+    "EURUSD_NEUTRAL_LONDON_-1_10": {
+      "wins": 4,
+      "losses": 0,
+      "pnl": 0.0012,
+      "trades": 4
+    },
+    "GBPUSD_NEUTRAL_LONDON_-1_10": {
+      "wins": 64,
+      "losses": 0,
+      "pnl": 7.764999999999998,
+      "trades": 64
+    },
+    "GBPUSD_NEUTRAL_LONDON_NY_-1_12": {
+      "wins": 42,
+      "losses": 0,
+      "pnl": 4.1171000000000015,
+      "trades": 42
+    },
+    "EURUSD_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 10,
+      "losses": 0,
+      "pnl": 0.9529,
+      "trades": 10
+    },
+    "GBPUSD_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 71,
+      "losses": 0,
+      "pnl": 7.266500000000002,
+      "trades": 71
+    },
+    "EURUSD_NEUTRAL_LONDON_NY_-1_15": {
+      "wins": 8,
+      "losses": 24,
+      "pnl": 3.4239999999999995,
+      "trades": 32
+    },
+    "USDJPY_NEUTRAL_LONDON_NY_-1_15": {
+      "wins": 34,
+      "losses": 0,
+      "pnl": 7.803199999999999,
+      "trades": 34
+    },
+    "GBPUSD_NEUTRAL_LONDON_NY_-1_15": {
+      "wins": 29,
+      "losses": 21,
+      "pnl": -17.774000000000008,
+      "trades": 50
+    },
+    "USDJPY_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 28,
+      "losses": 144,
+      "pnl": 2.2939999999999996,
+      "trades": 172
+    },
+    "EURUSD_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 0,
+      "losses": 4,
+      "pnl": 0.0,
+      "trades": 4
+    },
+    "USDJPY_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 16,
+      "losses": 0,
+      "pnl": 7.704199999999998,
+      "trades": 16
+    },
+    "USDJPY_NEUTRAL_NEW_YORK_-1_20": {
+      "wins": 11,
+      "losses": 0,
+      "pnl": 2.2613000000000003,
+      "trades": 11
+    },
+    "USDJPY_NEUTRAL_ASIA_-1_0": {
+      "wins": 42,
+      "losses": 4,
+      "pnl": -5.2967,
+      "trades": 46
+    },
+    "GBPUSD_NEUTRAL_ASIA_-1_0": {
+      "wins": 4,
+      "losses": 0,
+      "pnl": 0.8236,
+      "trades": 4
+    },
+    "GBPUSD_NEUTRAL_ASIA_-1_2": {
+      "wins": 3,
+      "losses": 0,
+      "pnl": 0.6169,
+      "trades": 3
+    },
+    "USDJPY_NEUTRAL_LONDON_-1_9": {
+      "wins": 33,
+      "losses": 160,
+      "pnl": 2.7328000000000165,
+      "trades": 193
+    },
+    "GBPUSD_NEUTRAL_LONDON_-1_11": {
+      "wins": 14,
+      "losses": 0,
+      "pnl": 2.7937000000000007,
+      "trades": 14
+    },
+    "GBPUSD_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 10,
+      "losses": 0,
+      "pnl": 3.7467,
+      "trades": 10
+    },
+    "GBPUSD_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 13,
+      "losses": 3,
+      "pnl": -22.083600000000008,
+      "trades": 16
+    },
+    "USDJPY_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 20,
+      "losses": 0,
+      "pnl": 2.003499999999999,
+      "trades": 20
+    },
+    "EURUSD_NEUTRAL_NEW_YORK_-1_20": {
+      "wins": 11,
+      "losses": 0,
+      "pnl": 7.8035,
+      "trades": 11
+    },
+    "EURUSD_NEUTRAL_ASIA_-1_5": {
+      "wins": 17,
+      "losses": 0,
+      "pnl": 6.224499999999999,
+      "trades": 17
+    },
+    "EURUSD_NEUTRAL_OFF_-1_21": {
+      "wins": 4,
+      "losses": 0,
+      "pnl": 7.0848,
+      "trades": 4
+    },
+    "USDJPY_NEUTRAL_LONDON_NY_-1_12": {
+      "wins": 19,
+      "losses": 0,
+      "pnl": 0.0019000000000000006,
+      "trades": 19
+    },
+    "USDJPY_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 15,
+      "losses": 0,
+      "pnl": 2.5393000000000003,
+      "trades": 15
+    },
+    "GBPUSD_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 24,
+      "losses": 0,
+      "pnl": 1.4971,
+      "trades": 24
+    },
+    "USDJPY_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 1,
+      "losses": 5,
+      "pnl": -11.3204,
+      "trades": 6
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_3": {
+      "wins": 72,
+      "losses": 22,
+      "pnl": 8.48029999999999,
+      "trades": 94
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_4": {
+      "wins": 27,
+      "losses": 9,
+      "pnl": -0.9595000000000011,
+      "trades": 36
+    },
+    "BTCUSD_NEUTRAL_LONDON_-1_7": {
+      "wins": 64,
+      "losses": 20,
+      "pnl": 6.0614000000000035,
+      "trades": 84
+    },
+    "BTCUSD_NEUTRAL_LONDON_-1_10": {
+      "wins": 43,
+      "losses": 0,
+      "pnl": 4.823899999999998,
+      "trades": 43
+    },
+    "BTCUSD_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 177,
+      "losses": 21,
+      "pnl": 80.78500000000003,
+      "trades": 198
+    },
+    "BTCUSD_NEUTRAL_LONDON_NY_-1_14": {
+      "wins": 175,
+      "losses": 33,
+      "pnl": 39.47610000000004,
+      "trades": 208
+    },
+    "BTCUSD_NEUTRAL_LONDON_NY_-1_15": {
+      "wins": 355,
+      "losses": 118,
+      "pnl": -13.047200000000082,
+      "trades": 473
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_5": {
+      "wins": 33,
+      "losses": 3,
+      "pnl": 29.579800000000002,
+      "trades": 36
+    },
+    "BTCUSD_NEUTRAL_LONDON_-1_8": {
+      "wins": 20,
+      "losses": 9,
+      "pnl": 7.8408999999999995,
+      "trades": 29
+    },
+    "BTCUSD_NEUTRAL_LONDON_-1_9": {
+      "wins": 28,
+      "losses": 7,
+      "pnl": -119.8668,
+      "trades": 35
+    },
+    "BTCUSD_NEUTRAL_LONDON_-1_11": {
+      "wins": 12,
+      "losses": 0,
+      "pnl": 8.716399999999998,
+      "trades": 12
+    },
+    "BTCUSD_NEUTRAL_LONDON_NY_-1_12": {
+      "wins": 3,
+      "losses": 1,
+      "pnl": -0.585,
+      "trades": 4
+    },
+    "BTCUSD_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 115,
+      "losses": 261,
+      "pnl": 73.76900000000012,
+      "trades": 376
+    },
+    "BTCUSD_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 99,
+      "losses": 11,
+      "pnl": 43.32819999999997,
+      "trades": 110
+    },
+    "BTCUSD_NEUTRAL_OFF_-1_21": {
+      "wins": 52,
+      "losses": 0,
+      "pnl": 20.806999999999988,
+      "trades": 52
+    },
+    "BTCUSD_NEUTRAL_OFF_-1_22": {
+      "wins": 26,
+      "losses": 0,
+      "pnl": 5.939399999999999,
+      "trades": 26
+    },
+    "BTCUSD_NEUTRAL_OFF_-1_23": {
+      "wins": 16,
+      "losses": 30,
+      "pnl": -41.94509999999997,
+      "trades": 46
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_2": {
+      "wins": 158,
+      "losses": 38,
+      "pnl": 10.242499999999971,
+      "trades": 196
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_6": {
+      "wins": 13,
+      "losses": 9,
+      "pnl": 13.620899999999999,
+      "trades": 22
+    },
+    "BTCUSD_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 203,
+      "losses": 26,
+      "pnl": 64.7301999999999,
+      "trades": 229
+    },
+    "BTCUSD_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 133,
+      "losses": 19,
+      "pnl": 39.350400000000015,
+      "trades": 152
+    },
+    "GBPUSD_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 10,
+      "losses": 0,
+      "pnl": 0.612,
+      "trades": 10
+    },
+    "USDCHF_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 167,
+      "losses": 56,
+      "pnl": 0.3962000000000009,
+      "trades": 223
+    },
+    "USDCHF_NEUTRAL_NEW_YORK_-1_20": {
+      "wins": 5,
+      "losses": 0,
+      "pnl": 0.536,
+      "trades": 5
+    },
+    "BTCUSD_NEUTRAL_NEW_YORK_-1_20": {
+      "wins": 25,
+      "losses": 69,
+      "pnl": 3.1867999999999963,
+      "trades": 94
+    },
+    "USDJPY_NEUTRAL_OFF_-1_22": {
+      "wins": 5,
+      "losses": 0,
+      "pnl": 0.3825,
+      "trades": 5
+    },
+    "USDCHF_NEUTRAL_ASIA_-1_0": {
+      "wins": 5,
+      "losses": 0,
+      "pnl": 0.306,
+      "trades": 5
+    },
+    "USDJPY_NEUTRAL_ASIA_-1_1": {
+      "wins": 35,
+      "losses": 0,
+      "pnl": 2.9831999999999987,
+      "trades": 35
+    },
+    "USDJPY_NEUTRAL_ASIA_-1_2": {
+      "wins": 68,
+      "losses": 524,
+      "pnl": 0.5355,
+      "trades": 592
+    },
+    "USDJPY_NEUTRAL_ASIA_-1_5": {
+      "wins": 10,
+      "losses": 0,
+      "pnl": 0.7648,
+      "trades": 10
+    },
+    "GBPUSD_NEUTRAL_ASIA_-1_5": {
+      "wins": 19,
+      "losses": 0,
+      "pnl": 2.2788999999999997,
+      "trades": 19
+    },
+    "GBPUSD_NEUTRAL_ASIA_-1_6": {
+      "wins": 26,
+      "losses": 0,
+      "pnl": 5.6431999999999976,
+      "trades": 26
+    },
+    "USDJPY_NEUTRAL_ASIA_-1_6": {
+      "wins": 20,
+      "losses": 0,
+      "pnl": 1.9014000000000002,
+      "trades": 20
+    },
+    "USDJPY_NEUTRAL_LONDON_-1_7": {
+      "wins": 30,
+      "losses": 5,
+      "pnl": -7.355899999999999,
+      "trades": 35
+    },
+    "EURUSD_NEUTRAL_LONDON_-1_7": {
+      "wins": 5,
+      "losses": 0,
+      "pnl": 0.4675,
+      "trades": 5
+    },
+    "USDJPY_NEUTRAL_LONDON_-1_8": {
+      "wins": 10,
+      "losses": 0,
+      "pnl": 2.3343,
+      "trades": 10
+    },
+    "EURUSD_NEUTRAL_LONDON_-1_8": {
+      "wins": 35,
+      "losses": 5,
+      "pnl": 2.8042999999999996,
+      "trades": 40
+    },
+    "GBPUSD_NEUTRAL_LONDON_NY_-1_14": {
+      "wins": 25,
+      "losses": 0,
+      "pnl": 3.0146000000000006,
+      "trades": 25
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_0": {
+      "wins": 120,
+      "losses": 29,
+      "pnl": -220.29119999999966,
+      "trades": 149
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_0": {
+      "wins": 505,
+      "losses": 91,
+      "pnl": 45.86859999999988,
+      "trades": 596
+    },
+    "XAGAUDM_NEUTRAL_ASIA_-1_0": {
+      "wins": 11,
+      "losses": 6,
+      "pnl": -1.6385999999999994,
+      "trades": 17
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_1": {
+      "wins": 5492,
+      "losses": 1523,
+      "pnl": 24.681599999997818,
+      "trades": 7015
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_2": {
+      "wins": 137,
+      "losses": 114,
+      "pnl": -6.2163999999999895,
+      "trades": 251
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_4": {
+      "wins": 3604,
+      "losses": 2065,
+      "pnl": -18.30780000000027,
+      "trades": 5669
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_5": {
+      "wins": 3583,
+      "losses": 1355,
+      "pnl": -183.126599999987,
+      "trades": 4938
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_6": {
+      "wins": 138,
+      "losses": 12,
+      "pnl": 0.7801999999999992,
+      "trades": 150
+    },
+    "XAUUSD_NEUTRAL_LONDON_-1_7": {
+      "wins": 4537,
+      "losses": 1380,
+      "pnl": 0.5944999999999186,
+      "trades": 5917
+    },
+    "GBPUSD_NEUTRAL_LONDON_-1_7": {
+      "wins": 0,
+      "losses": 14,
+      "pnl": -0.09100000000000003,
+      "trades": 14
+    },
+    "USDCHF_NEUTRAL_LONDON_-1_7": {
+      "wins": 35,
+      "losses": 0,
+      "pnl": 0.0014000000000000004,
+      "trades": 35
+    },
+    "XAUUSD_NEUTRAL_LONDON_-1_8": {
+      "wins": 3431,
+      "losses": 892,
+      "pnl": -0.20960000000000106,
+      "trades": 4323
+    },
+    "USDCHF_NEUTRAL_LONDON_-1_8": {
+      "wins": 37,
+      "losses": 0,
+      "pnl": 0.005100000000000003,
+      "trades": 37
+    },
+    "XAUUSD_NEUTRAL_LONDON_-1_9": {
+      "wins": 132,
+      "losses": 43,
+      "pnl": 11.987399999999992,
+      "trades": 175
+    },
+    "XAGUSD_NEUTRAL_LONDON_-1_9": {
+      "wins": 83,
+      "losses": 8,
+      "pnl": 0.05869999999999996,
+      "trades": 91
+    },
+    "XAGAUDM_NEUTRAL_LONDON_NY_-1_12": {
+      "wins": 56,
+      "losses": 6,
+      "pnl": -29.245000000000005,
+      "trades": 62
+    },
+    "XAUUSD_NEUTRAL_LONDON_NY_-1_12": {
+      "wins": 3416,
+      "losses": 909,
+      "pnl": -2.4771000000000107,
+      "trades": 4325
+    },
+    "XAGAUDM_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 24,
+      "losses": 0,
+      "pnl": 3.8076000000000016,
+      "trades": 24
+    },
+    "XAGAUDM_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 46,
+      "losses": 8,
+      "pnl": -31.093099999999957,
+      "trades": 54
+    },
+    "XAUUSD_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 3306,
+      "losses": 893,
+      "pnl": 0.12909999999998756,
+      "trades": 4199
+    },
+    "XAUUSD_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 6165,
+      "losses": 2070,
+      "pnl": -250.70799999999974,
+      "trades": 8235
+    },
+    "XAUUSD_NEUTRAL_NEW_YORK_-1_20": {
+      "wins": 4625,
+      "losses": 1891,
+      "pnl": -158.3333999999982,
+      "trades": 6516
+    },
+    "XAUUSD_NEUTRAL_OFF_-1_22": {
+      "wins": 227,
+      "losses": 807,
+      "pnl": -123.4610999999999,
+      "trades": 1034
+    },
+    "XAGAUDM_NEUTRAL_ASIA_-1_4": {
+      "wins": 4,
+      "losses": 16,
+      "pnl": -8.06,
+      "trades": 20
+    },
+    "XAGUSD_NEUTRAL_LONDON_-1_7": {
+      "wins": 0,
+      "losses": 40,
+      "pnl": -0.0071999999999999955,
+      "trades": 40
+    },
+    "XAGAUDM_NEUTRAL_LONDON_-1_7": {
+      "wins": 40,
+      "losses": 46,
+      "pnl": -545.6293000000003,
+      "trades": 86
+    },
+    "XAUUSD_NEUTRAL_LONDON_-1_10": {
+      "wins": 2905,
+      "losses": 715,
+      "pnl": -7.976499999999989,
+      "trades": 3620
+    },
+    "XAUUSD_NEUTRAL_LONDON_-1_11": {
+      "wins": 2982,
+      "losses": 914,
+      "pnl": -5.43820000000004,
+      "trades": 3896
+    },
+    "XAUUSD_NEUTRAL_LONDON_NY_-1_15": {
+      "wins": 3496,
+      "losses": 903,
+      "pnl": -48.41119999999723,
+      "trades": 4399
+    },
+    "EURUSD_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 40,
+      "losses": 200,
+      "pnl": -0.5683999999999941,
+      "trades": 240
+    },
+    "XAUUSD_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 0,
+      "losses": 24,
+      "pnl": -0.1600000000000001,
+      "trades": 24
+    },
+    "XAGAUDM_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 18,
+      "losses": 35,
+      "pnl": -129.0598000000001,
+      "trades": 53
+    },
+    "XAGAUDM_NEUTRAL_OFF_-1_22": {
+      "wins": 8,
+      "losses": 0,
+      "pnl": 45.1511,
+      "trades": 8
+    },
+    "XAUUSD_NEUTRAL_ASIA_-1_3": {
+      "wins": 21,
+      "losses": 97,
+      "pnl": -778.0079999999992,
+      "trades": 118
+    },
+    "XAGAUDM_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 54,
+      "losses": 47,
+      "pnl": -23.919899999999963,
+      "trades": 101
+    },
+    "XAUUSD_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 1844,
+      "losses": 403,
+      "pnl": 0.1375000000000016,
+      "trades": 2247
+    },
+    "XAUUSD_NEUTRAL_LONDON_NY_-1_14": {
+      "wins": 1927,
+      "losses": 625,
+      "pnl": 46.13429999999953,
+      "trades": 2552
+    },
+    "XAGAUDM_NEUTRAL_LONDON_NY_-1_15": {
+      "wins": 31,
+      "losses": 20,
+      "pnl": -26.7434,
+      "trades": 51
+    },
+    "XAUUSD_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 23,
+      "losses": 48,
+      "pnl": 4.2948,
+      "trades": 71
+    },
+    "XAGAUDM_NEUTRAL_NEW_YORK_-1_20": {
+      "wins": 6,
+      "losses": 8,
+      "pnl": -14.423100000000003,
+      "trades": 14
+    },
+    "BTCUSD_NEUTRAL_ASIA_-1_1": {
+      "wins": 56,
+      "losses": 86,
+      "pnl": -4.4971000000000005,
+      "trades": 142
+    },
+    "XAGUSD_NEUTRAL_ASIA_-1_4": {
+      "wins": 0,
+      "losses": 7,
+      "pnl": -0.0028000000000000004,
+      "trades": 7
+    },
+    "XAUUSD_NEUTRAL_OFF_-1_23": {
+      "wins": 397,
+      "losses": 202,
+      "pnl": 48.644800000000025,
+      "trades": 599
+    },
+    "AUDUSD_NEUTRAL_ASIA_-1_6": {
+      "wins": 24,
+      "losses": 0,
+      "pnl": 0.0024,
+      "trades": 24
+    },
+    "AUDUSD_NEUTRAL_LONDON_-1_7": {
+      "wins": 24,
+      "losses": 0,
+      "pnl": 0.0008000000000000001,
+      "trades": 24
+    },
+    "XAGUSD_NEUTRAL_LONDON_-1_10": {
+      "wins": 272,
+      "losses": 8,
+      "pnl": 0.3643000000000011,
+      "trades": 280
+    },
+    "EURUSD_NEUTRAL_LONDON_-1_11": {
+      "wins": 18,
+      "losses": 0,
+      "pnl": 0.9926999999999997,
+      "trades": 18
+    },
+    "GBPJPY_NEUTRAL_LONDON_-1_11": {
+      "wins": 18,
+      "losses": 40,
+      "pnl": -10.700999999999988,
+      "trades": 58
+    },
+    "XAGUSD_NEUTRAL_LONDON_NY_-1_13": {
+      "wins": 82,
+      "losses": 40,
+      "pnl": -1.7356000000000062,
+      "trades": 122
+    },
+    "XAGAUDM_NEUTRAL_LONDON_NY_-1_14": {
+      "wins": 89,
+      "losses": 8,
+      "pnl": 51.106799999999915,
+      "trades": 97
+    },
+    "XAGUSD_NEUTRAL_ASIA_-1_2": {
+      "wins": 24,
+      "losses": 0,
+      "pnl": 0.0171,
+      "trades": 24
+    },
+    "XAGUSD_NEUTRAL_LONDON_-1_11": {
+      "wins": 246,
+      "losses": 39,
+      "pnl": 0.5981999999999974,
+      "trades": 285
+    },
+    "XAGUSD_NEUTRAL_LONDON_NY_-1_12": {
+      "wins": 113,
+      "losses": 41,
+      "pnl": -1.7562000000000038,
+      "trades": 154
+    },
+    "GBPJPY_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 10,
+      "losses": 0,
+      "pnl": 52.40700000000001,
+      "trades": 10
+    },
+    "XAGAUDM_NEUTRAL_LONDON_-1_9": {
+      "wins": 34,
+      "losses": 23,
+      "pnl": -22.8092,
+      "trades": 57
+    },
+    "XAGAUDM_NEUTRAL_LONDON_-1_11": {
+      "wins": 12,
+      "losses": 0,
+      "pnl": 5.207999999999999,
+      "trades": 12
+    },
+    "XAGUSD_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 144,
+      "losses": 27,
+      "pnl": 0.05220000000000009,
+      "trades": 171
+    },
+    "XAGAUDM_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 15,
+      "losses": 0,
+      "pnl": 2.5759,
+      "trades": 15
+    },
+    "XAGUSD_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 135,
+      "losses": 0,
+      "pnl": 0.037800000000000056,
+      "trades": 135
+    },
+    "XAGUSD_NEUTRAL_NEW_YORK_-1_19": {
+      "wins": 72,
+      "losses": 0,
+      "pnl": 0.0416,
+      "trades": 72
+    },
+    "XAGUSD_NEUTRAL_OFF_-1_22": {
+      "wins": 8,
+      "losses": 0,
+      "pnl": 0.0024,
+      "trades": 8
+    },
+    "XAGAUDM_NEUTRAL_OFF_-1_23": {
+      "wins": 0,
+      "losses": 3,
+      "pnl": -5.6538,
+      "trades": 3
+    },
+    "XAGAUDM_NEUTRAL_ASIA_-1_1": {
+      "wins": 30,
+      "losses": 3,
+      "pnl": 10.319299999999998,
+      "trades": 33
+    },
+    "XAGAUDM_NEUTRAL_ASIA_-1_3": {
+      "wins": 0,
+      "losses": 3,
+      "pnl": -55.94579999999999,
+      "trades": 3
+    },
+    "XAGAUDM_NEUTRAL_ASIA_-1_6": {
+      "wins": 27,
+      "losses": 0,
+      "pnl": 16.0779,
+      "trades": 27
+    },
+    "XAGUSD_NEUTRAL_LONDON_-1_8": {
+      "wins": 168,
+      "losses": 16,
+      "pnl": 0.07040000000000007,
+      "trades": 184
+    },
+    "XAGAUDM_NEUTRAL_LONDON_-1_8": {
+      "wins": 0,
+      "losses": 3,
+      "pnl": -0.1875,
+      "trades": 3
+    },
+    "XAGAUDM_NEUTRAL_LONDON_-1_10": {
+      "wins": 4,
+      "losses": 0,
+      "pnl": 0.5858,
+      "trades": 4
+    },
+    "USDJPY_NEUTRAL_LONDON_-1_10": {
+      "wins": 16,
+      "losses": 0,
+      "pnl": 0.0016000000000000005,
+      "trades": 16
+    },
+    "GBPJPY_NEUTRAL_LONDON_NY_-1_16": {
+      "wins": 102,
+      "losses": 0,
+      "pnl": 22.263800000000007,
+      "trades": 102
+    },
+    "GBPJPY_NEUTRAL_NEW_YORK_-1_17": {
+      "wins": 60,
+      "losses": 0,
+      "pnl": 34.36199999999997,
+      "trades": 60
+    },
+    "GBPJPY_NEUTRAL_NEW_YORK_-1_18": {
+      "wins": 30,
+      "losses": 0,
+      "pnl": 31.24099999999999,
+      "trades": 30
+    }
+  },
+  "blacklist": [
+    "BTCUSD_NEUTRAL_LONDON_NY_-1_16",
+    "XAUUSD_NEUTRAL_ASIA_-1_4",
+    "GBPJPY_NEUTRAL_LONDON_-1_11",
+    "GBPUSD_NEUTRAL_LONDON_-1_7",
+    "XAGAUDM_NEUTRAL_ASIA_-1_4",
+    "XAUUSD_NEUTRAL_LONDON_-1_8",
+    "XAUUSD_NEUTRAL_ASIA_-1_3",
+    "XAGUSD_NEUTRAL_LONDON_-1_7",
+    "XAUUSD_NEUTRAL_OFF_-1_23",
+    "XAUUSD_NEUTRAL_ASIA_-1_2",
+    "USDJPY_NEUTRAL_ASIA_-1_2",
+    "XAUUSD_NEUTRAL_LONDON_NY_-1_16",
+    "USDJPY_NEUTRAL_NEW_YORK_-1_17",
+    "XAUUSD_NEUTRAL_NEW_YORK_-1_18",
+    "XAUUSD_NEUTRAL_OFF_-1_22",
+    "BTCUSD_NEUTRAL_OFF_-1_23",
+    "EURUSD_NEUTRAL_LONDON_NY_-1_15",
+    "BTCUSD_NEUTRAL_ASIA_-1_3",
+    "USDJPY_NEUTRAL_LONDON_-1_9",
+    "BTCUSD_NEUTRAL_NEW_YORK_-1_20",
+    "BTCUSD_NEUTRAL_ASIA_-1_4",
+    "XAGAUDM_NEUTRAL_NEW_YORK_-1_19",
+    "XAGUSD_NEUTRAL_LONDON_NY_-1_13",
+    "XAGAUDM_NEUTRAL_LONDON_NY_-1_13",
+    "BTCUSD_NEUTRAL_LONDON_-1_7",
+    "XAUUSD_NEUTRAL_NEW_YORK_-1_17",
+    "BTCUSD_NEUTRAL_ASIA_-1_1",
+    "XAGAUDM_NEUTRAL_NEW_YORK_-1_20",
+    "EURUSD_NEUTRAL_LONDON_NY_-1_16",
+    "XAGAUDM_NEUTRAL_LONDON_-1_7"
+  ]
+}

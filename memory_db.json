@@ -1,0 +1,338 @@
+{
+  "EURUSD:NEUTRAL:LONDON:-1": {
+    "trades": 222,
+    "wins": 204,
+    "losses": 18,
+    "total_pnl": 8.012599999999988,
+    "win_rate": 0.918918918918919,
+    "confidence_boost": 0.1256756756756757
+  },
+  "GBPUSD:NEUTRAL:LONDON:-1": {
+    "trades": 334,
+    "wins": 306,
+    "losses": 28,
+    "total_pnl": 53.765599999999935,
+    "win_rate": 0.9161676646706587,
+    "confidence_boost": 0.1248502994011976
+  },
+  "USDCHF:NEUTRAL:LONDON:-1": {
+    "trades": 182,
+    "wins": 180,
+    "losses": 2,
+    "total_pnl": 1.9829999999999983,
+    "win_rate": 0.989010989010989,
+    "confidence_boost": 0.1467032967032967
+  },
+  "GBPUSD:NEUTRAL:LONDON_NY:-1": {
+    "trades": 424,
+    "wins": 382,
+    "losses": 42,
+    "total_pnl": -3.7573999999999668,
+    "win_rate": 0.9009433962264151,
+    "confidence_boost": 0.12028301886792452
+  },
+  "EURUSD:NEUTRAL:LONDON_NY:-1": {
+    "trades": 564,
+    "wins": 116,
+    "losses": 448,
+    "total_pnl": 7.6169999999999725,
+    "win_rate": 0.20567375886524822,
+    "confidence_boost": -0.08829787234042553
+  },
+  "USDJPY:NEUTRAL:LONDON_NY:-1": {
+    "trades": 148,
+    "wins": 138,
+    "losses": 10,
+    "total_pnl": -1.9520000000000173,
+    "win_rate": 0.9324324324324325,
+    "confidence_boost": 0.12972972972972974
+  },
+  "USDJPY:NEUTRAL:NEW_YORK:-1": {
+    "trades": 438,
+    "wins": 150,
+    "losses": 288,
+    "total_pnl": 28.525999999999957,
+    "win_rate": 0.3424657534246575,
+    "confidence_boost": -0.04726027397260275
+  },
+  "EURUSD:NEUTRAL:NEW_YORK:-1": {
+    "trades": 30,
+    "wins": 22,
+    "losses": 8,
+    "total_pnl": 15.607,
+    "win_rate": 0.7333333333333333,
+    "confidence_boost": 0.06999999999999998
+  },
+  "USDJPY:NEUTRAL:ASIA:-1": {
+    "trades": 1406,
+    "wins": 350,
+    "losses": 1056,
+    "total_pnl": 1.7763999999999565,
+    "win_rate": 0.24893314366998578,
+    "confidence_boost": -0.07532005689900427
+  },
+  "GBPUSD:NEUTRAL:ASIA:-1": {
+    "trades": 104,
+    "wins": 104,
+    "losses": 0,
+    "total_pnl": 18.725200000000036,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "USDJPY:NEUTRAL:LONDON:-1": {
+    "trades": 508,
+    "wins": 178,
+    "losses": 330,
+    "total_pnl": -4.574399999999962,
+    "win_rate": 0.35039370078740156,
+    "confidence_boost": -0.04488188976377953
+  },
+  "GBPUSD:NEUTRAL:NEW_YORK:-1": {
+    "trades": 72,
+    "wins": 66,
+    "losses": 6,
+    "total_pnl": -35.44979999999998,
+    "win_rate": 0.9166666666666666,
+    "confidence_boost": 0.12499999999999999
+  },
+  "EURUSD:NEUTRAL:ASIA:-1": {
+    "trades": 34,
+    "wins": 34,
+    "losses": 0,
+    "total_pnl": 12.449000000000005,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "EURUSD:NEUTRAL:OFF:-1": {
+    "trades": 8,
+    "wins": 8,
+    "losses": 0,
+    "total_pnl": 14.1696,
+    "win_rate": 1.0,
+    "confidence_boost": 0.0
+  },
+  "BTCUSD:NEUTRAL:ASIA:-1": {
+    "trades": 1350,
+    "wins": 958,
+    "losses": 392,
+    "total_pnl": -327.64860000000107,
+    "win_rate": 0.7096296296296296,
+    "confidence_boost": 0.06288888888888888
+  },
+  "BTCUSD:NEUTRAL:LONDON:-1": {
+    "trades": 406,
+    "wins": 334,
+    "losses": 72,
+    "total_pnl": -184.84839999999977,
+    "win_rate": 0.8226600985221675,
+    "confidence_boost": 0.09679802955665025
+  },
+  "BTCUSD:NEUTRAL:LONDON_NY:-1": {
+    "trades": 2518,
+    "wins": 1650,
+    "losses": 868,
+    "total_pnl": 360.7957999999943,
+    "win_rate": 0.6552819698173153,
+    "confidence_boost": 0.046584590945194605
+  },
+  "BTCUSD:NEUTRAL:NEW_YORK:-1": {
+    "trades": 1170,
+    "wins": 920,
+    "losses": 250,
+    "total_pnl": 301.19119999999737,
+    "win_rate": 0.7863247863247863,
+    "confidence_boost": 0.08589743589743588
+  },
+  "BTCUSD:NEUTRAL:OFF:-1": {
+    "trades": 248,
+    "wins": 188,
+    "losses": 60,
+    "total_pnl": -30.397400000000005,
+    "win_rate": 0.7580645161290323,
+    "confidence_boost": 0.07741935483870967
+  },
+  "USDCHF:NEUTRAL:NEW_YORK:-1": {
+    "trades": 456,
+    "wins": 344,
+    "losses": 112,
+    "total_pnl": 1.8643999999999932,
+    "win_rate": 0.7543859649122807,
+    "confidence_boost": 0.07631578947368421
+  },
+  "USDJPY:NEUTRAL:OFF:-1": {
+    "trades": 10,
+    "wins": 10,
+    "losses": 0,
+    "total_pnl": 0.765,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "USDCHF:NEUTRAL:ASIA:-1": {
+    "trades": 10,
+    "wins": 10,
+    "losses": 0,
+    "total_pnl": 0.612,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "XAUUSD:NEUTRAL:ASIA:-1": {
+    "trades": 37474,
+    "wins": 26960,
+    "losses": 10514,
+    "total_pnl": -1828.6568000003072,
+    "win_rate": 0.719432139616801,
+    "confidence_boost": 0.06582964188504029
+  },
+  "XAGAUDM:NEUTRAL:ASIA:-1": {
+    "trades": 200,
+    "wins": 144,
+    "losses": 56,
+    "total_pnl": -78.49439999999981,
+    "win_rate": 0.72,
+    "confidence_boost": 0.06599999999999999
+  },
+  "XAUUSD:NEUTRAL:LONDON:-1": {
+    "trades": 35862,
+    "wins": 27974,
+    "losses": 7888,
+    "total_pnl": -2.084799999995037,
+    "win_rate": 0.7800457308571748,
+    "confidence_boost": 0.08401371925715242
+  },
+  "XAGUSD:NEUTRAL:LONDON:-1": {
+    "trades": 1760,
+    "wins": 1538,
+    "losses": 222,
+    "total_pnl": 2.1688000000000107,
+    "win_rate": 0.8738636363636364,
+    "confidence_boost": 0.11215909090909092
+  },
+  "XAGAUDM:NEUTRAL:LONDON_NY:-1": {
+    "trades": 670,
+    "wins": 508,
+    "losses": 162,
+    "total_pnl": -49.987799999999716,
+    "win_rate": 0.7582089552238805,
+    "confidence_boost": 0.07746268656716417
+  },
+  "XAUUSD:NEUTRAL:LONDON_NY:-1": {
+    "trades": 27188,
+    "wins": 21412,
+    "losses": 5776,
+    "total_pnl": -0.6433999999797404,
+    "win_rate": 0.7875533323525085,
+    "confidence_boost": 0.08626599970575254
+  },
+  "XAGAUDM:NEUTRAL:NEW_YORK:-1": {
+    "trades": 272,
+    "wins": 170,
+    "losses": 102,
+    "total_pnl": -344.0002,
+    "win_rate": 0.625,
+    "confidence_boost": 0.0375
+  },
+  "XAUUSD:NEUTRAL:NEW_YORK:-1": {
+    "trades": 37948,
+    "wins": 28192,
+    "losses": 9756,
+    "total_pnl": -818.1446000000111,
+    "win_rate": 0.7429113523769368,
+    "confidence_boost": 0.07287340571308105
+  },
+  "XAUUSD:NEUTRAL:OFF:-1": {
+    "trades": 3266,
+    "wins": 1248,
+    "losses": 2018,
+    "total_pnl": -149.63259999999732,
+    "win_rate": 0.38211879975505203,
+    "confidence_boost": -0.03536436007348439
+  },
+  "XAGAUDM:NEUTRAL:LONDON:-1": {
+    "trades": 324,
+    "wins": 180,
+    "losses": 144,
+    "total_pnl": -1125.6644000000013,
+    "win_rate": 0.5555555555555556,
+    "confidence_boost": 0.016666666666666673
+  },
+  "XAGAUDM:NEUTRAL:OFF:-1": {
+    "trades": 22,
+    "wins": 16,
+    "losses": 6,
+    "total_pnl": 78.99459999999996,
+    "win_rate": 0.7272727272727273,
+    "confidence_boost": 0.06818181818181819
+  },
+  "XAGUSD:NEUTRAL:ASIA:-1": {
+    "trades": 62,
+    "wins": 48,
+    "losses": 14,
+    "total_pnl": 0.028599999999999997,
+    "win_rate": 0.7741935483870968,
+    "confidence_boost": 0.08225806451612902
+  },
+  "AUDUSD:NEUTRAL:ASIA:-1": {
+    "trades": 48,
+    "wins": 48,
+    "losses": 0,
+    "total_pnl": 0.0048,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "AUDUSD:NEUTRAL:LONDON:-1": {
+    "trades": 48,
+    "wins": 48,
+    "losses": 0,
+    "total_pnl": 0.0016000000000000005,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "GBPJPY:NEUTRAL:LONDON:-1": {
+    "trades": 116,
+    "wins": 36,
+    "losses": 80,
+    "total_pnl": -21.40200000000004,
+    "win_rate": 0.3103448275862069,
+    "confidence_boost": -0.05689655172413793
+  },
+  "XAGUSD:NEUTRAL:LONDON_NY:-1": {
+    "trades": 552,
+    "wins": 390,
+    "losses": 162,
+    "total_pnl": -6.9835999999999725,
+    "win_rate": 0.7065217391304348,
+    "confidence_boost": 0.06195652173913044
+  },
+  "GBPJPY:NEUTRAL:NEW_YORK:-1": {
+    "trades": 200,
+    "wins": 200,
+    "losses": 0,
+    "total_pnl": 236.01999999999995,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "XAGUSD:NEUTRAL:NEW_YORK:-1": {
+    "trades": 756,
+    "wins": 702,
+    "losses": 54,
+    "total_pnl": 0.2632000000000009,
+    "win_rate": 0.9285714285714286,
+    "confidence_boost": 0.1285714285714286
+  },
+  "XAGUSD:NEUTRAL:OFF:-1": {
+    "trades": 16,
+    "wins": 16,
+    "losses": 0,
+    "total_pnl": 0.0048,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  },
+  "GBPJPY:NEUTRAL:LONDON_NY:-1": {
+    "trades": 204,
+    "wins": 204,
+    "losses": 0,
+    "total_pnl": 44.52759999999994,
+    "win_rate": 1.0,
+    "confidence_boost": 0.15
+  }
+}
