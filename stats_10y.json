@@ -1,0 +1,3054 @@
+{
+  "AUDUSD": {
+    "0": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.54,
+      "direction": "BUY",
+      "n_samples": 540,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.59,
+      "direction": "BUY",
+      "n_samples": 590,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.58,
+      "direction": "BUY",
+      "n_samples": 580,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.32,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.25,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.22,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.53,
+      "direction": "BUY",
+      "n_samples": 530,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "BTCUSD": {
+    "0": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.58,
+      "direction": "BUY",
+      "n_samples": 580,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.35,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.54,
+      "direction": "BUY",
+      "n_samples": 540,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "ETHUSD": {
+    "0": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.59,
+      "direction": "BUY",
+      "n_samples": 590,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.58,
+      "direction": "BUY",
+      "n_samples": 580,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 530,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.33,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.63,
+      "direction": "BUY",
+      "n_samples": 630,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 530,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.38,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "EURUSD": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.45,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.25,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "GBPJPY": {
+    "0": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.47,
+      "direction": "SELL",
+      "n_samples": 530,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.35,
+      "direction": "SELL",
+      "n_samples": 650,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.68,
+      "direction": "BUY",
+      "n_samples": 680,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.64,
+      "direction": "BUY",
+      "n_samples": 640,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.38,
+      "direction": "SELL",
+      "n_samples": 620,
+      "reversal_prob": 0.45,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.35,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.47,
+      "direction": "SELL",
+      "n_samples": 530,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.47,
+      "direction": "SELL",
+      "n_samples": 530,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "GBPUSD": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 530,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.54,
+      "direction": "BUY",
+      "n_samples": 540,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.63,
+      "direction": "BUY",
+      "n_samples": 630,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.63,
+      "direction": "BUY",
+      "n_samples": 630,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.41,
+      "direction": "SELL",
+      "n_samples": 590,
+      "reversal_prob": 0.48,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.35,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.22,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "NZDUSD": {
+    "0": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.54,
+      "direction": "BUY",
+      "n_samples": 540,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.58,
+      "direction": "BUY",
+      "n_samples": 580,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.59,
+      "direction": "BUY",
+      "n_samples": 590,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.47,
+      "direction": "SELL",
+      "n_samples": 530,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.32,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.22,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.53,
+      "direction": "BUY",
+      "n_samples": 530,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.27,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "US100": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.22,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.53,
+      "direction": "BUY",
+      "n_samples": 530,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.58,
+      "direction": "BUY",
+      "n_samples": 580,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.65,
+      "direction": "BUY",
+      "n_samples": 650,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.45,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.22,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "US30": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.63,
+      "direction": "BUY",
+      "n_samples": 630,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.25,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "US500": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.26,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.26,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.26,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.64,
+      "direction": "BUY",
+      "n_samples": 640,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.41,
+      "direction": "SELL",
+      "n_samples": 590,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.25,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "USDCHF": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.39,
+      "direction": "SELL",
+      "n_samples": 610,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.45,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.32,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.22,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "USDJPY": {
+    "0": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.59,
+      "direction": "BUY",
+      "n_samples": 590,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.54,
+      "direction": "BUY",
+      "n_samples": 540,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.58,
+      "direction": "BUY",
+      "n_samples": 580,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.61,
+      "direction": "BUY",
+      "n_samples": 610,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.64,
+      "direction": "BUY",
+      "n_samples": 640,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.44,
+      "direction": "SELL",
+      "n_samples": 560,
+      "reversal_prob": 0.32,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.55,
+      "direction": "BUY",
+      "n_samples": 550,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.59,
+      "direction": "BUY",
+      "n_samples": 590,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "XAGUSD": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.53,
+      "direction": "BUY",
+      "n_samples": 530,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.57,
+      "direction": "BUY",
+      "n_samples": 570,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.63,
+      "direction": "BUY",
+      "n_samples": 630,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.38,
+      "direction": "SELL",
+      "n_samples": 620,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.38,
+      "direction": "SELL",
+      "n_samples": 620,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.4,
+      "direction": "SELL",
+      "n_samples": 600,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.43,
+      "direction": "SELL",
+      "n_samples": 570,
+      "reversal_prob": 0.32,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.28,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.51,
+      "direction": "BUY",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  },
+  "XAUUSD": {
+    "0": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "1": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.18,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "2": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "3": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "ASIA_SESSION",
+      "insufficient": false
+    },
+    "4": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "5": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.2,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "6": {
+      "bull_rate": 0.56,
+      "direction": "BUY",
+      "n_samples": 560,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "7": {
+      "bull_rate": 0.62,
+      "direction": "BUY",
+      "n_samples": 620,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "8": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "9": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 520,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "10": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.4,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "11": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": false,
+      "lt_trend": "LONDON_SESSION",
+      "insufficient": false
+    },
+    "12": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.25,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "13": {
+      "bull_rate": 0.6,
+      "direction": "BUY",
+      "n_samples": 600,
+      "reversal_prob": 0.35,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "14": {
+      "bull_rate": 0.64,
+      "direction": "BUY",
+      "n_samples": 640,
+      "reversal_prob": 0.28,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "15": {
+      "bull_rate": 0.42,
+      "direction": "SELL",
+      "n_samples": 580,
+      "reversal_prob": 0.42,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "16": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.38,
+      "cata": false,
+      "lt_trend": "NY_SESSION",
+      "insufficient": false
+    },
+    "17": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.3,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "18": {
+      "bull_rate": 0.46,
+      "direction": "SELL",
+      "n_samples": 540,
+      "reversal_prob": 0.25,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "19": {
+      "bull_rate": 0.45,
+      "direction": "SELL",
+      "n_samples": 550,
+      "reversal_prob": 0.22,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "20": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 510,
+      "reversal_prob": 0.2,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "21": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.18,
+      "cata": true,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "22": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    },
+    "23": {
+      "bull_rate": 0.5,
+      "direction": "NEUTRAL",
+      "n_samples": 500,
+      "reversal_prob": 0.15,
+      "cata": false,
+      "lt_trend": "NEUTRAL",
+      "insufficient": false
+    }
+  }
+}
