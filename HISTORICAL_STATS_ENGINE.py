@@ -46,6 +46,44 @@ SYMBOLS = {
     "US500":   {"yahoo": "ES=F",        "type": "index",   "binance": None},
 }
 
+# ─────────────────────────────────────────────────────────────────────────────
+# SEUILS PERSONNALISÉS PAR ACTIF
+# ─────────────────────────────────────────────────────────────────────────────
+# avg_return = rendement moyen d'une bougie horaire (en %)
+# Un seuil universel de 0.03% est du bruit pour BTC (range ~0.8%/h)
+# mais représente un vrai signal pour EURUSD (range ~0.045%/h)
+# Calibration: seuil = 15% du range horaire typique
+#
+# Pour la DIRECTION houraire  : seuil_h (bougie 1h)
+# Pour la DIRECTION weekday   : seuil_d (bougie daily)
+# Pour la DIRECTION mensuelle : seuil_m (bougie daily sur le mois)
+#
+DIRECTION_THRESHOLDS = {
+    # sym         h_buy   h_sell  d_buy   d_sell  m_buy   m_sell
+    "XAUUSD":  ( 0.027,  -0.027,  0.08,  -0.08,   0.15,  -0.15),
+    "XAGUSD":  ( 0.038,  -0.038,  0.10,  -0.10,   0.20,  -0.20),
+    "BTCUSD":  ( 0.120,  -0.120,  0.40,  -0.40,   1.00,  -1.00),
+    "ETHUSD":  ( 0.135,  -0.135,  0.45,  -0.45,   1.20,  -1.20),
+    "EURUSD":  ( 0.007,  -0.007,  0.04,  -0.04,   0.08,  -0.08),
+    "GBPUSD":  ( 0.008,  -0.008,  0.05,  -0.05,   0.10,  -0.10),
+    "USDJPY":  ( 0.008,  -0.008,  0.05,  -0.05,   0.10,  -0.10),
+    "GBPJPY":  ( 0.014,  -0.014,  0.07,  -0.07,   0.15,  -0.15),
+    "USDCHF":  ( 0.007,  -0.007,  0.04,  -0.04,   0.08,  -0.08),
+    "AUDUSD":  ( 0.008,  -0.008,  0.04,  -0.04,   0.09,  -0.09),
+    "US30":    ( 0.030,  -0.030,  0.10,  -0.10,   0.25,  -0.25),
+    "US100":   ( 0.042,  -0.042,  0.15,  -0.15,   0.35,  -0.35),
+    "US500":   ( 0.027,  -0.027,  0.10,  -0.10,   0.25,  -0.25),
+    # Défaut forex si symbole non listé
+    "_DEFAULT": (0.010,  -0.010,  0.05,  -0.05,   0.10,  -0.10),
+}
+
+def get_thresholds(sym):
+    """Retourne (h_buy, h_sell, d_buy, d_sell, m_buy, m_sell) pour le symbole."""
+    return DIRECTION_THRESHOLDS.get(
+        sym.upper().replace("m","").replace("M",""),
+        DIRECTION_THRESHOLDS["_DEFAULT"]
+    )
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                   "AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
@@ -191,9 +229,13 @@ def fetch_fred(series_id):
 def compute_stats_for_symbol(sym, cfg, macro_context):
     """
     Calcule toutes les stats pour un symbole depuis données historiques réelles.
-    Retourne un dict avec stats par heure, session, jour, régime macro.
+    Seuils de direction PERSONNALISÉS par actif (bull_rate seul est universel,
+    mais avg_return pour décider BUY/SELL/NEUTRAL dépend du range de l'actif).
     """
     print(f"  📊 {sym}...")
+
+    # Seuils personnalisés pour ce symbole
+    h_buy, h_sell, d_buy, d_sell, m_buy, m_sell = get_thresholds(sym)
 
     # Télécharger données
     daily_bars  = fetch_yahoo_daily(cfg["yahoo"], years=7)
@@ -203,19 +245,25 @@ def compute_stats_for_symbol(sym, cfg, macro_context):
         time.sleep(0.3)
     if not hourly_bars:
         hourly_bars = fetch_yahoo_hourly(cfg["yahoo"], years=2)
-    time.sleep(1.0)  # Respecter les rate limits
+    time.sleep(1.0)
 
     if not daily_bars:
         print(f"    ❌ Aucune donnée daily")
         return None
 
     print(f"    Daily: {len(daily_bars)} barres | Hourly: {len(hourly_bars)} barres")
+    print(f"    Seuils heure: BUY>{h_buy}% SELL<{h_sell}%")
 
     result = {
-        "sym": sym,
-        "type": cfg["type"],
-        "n_daily": len(daily_bars),
+        "sym":      sym,
+        "type":     cfg["type"],
+        "n_daily":  len(daily_bars),
         "n_hourly": len(hourly_bars),
+        "thresholds": {
+            "hourly_buy": h_buy, "hourly_sell": h_sell,
+            "daily_buy":  d_buy, "daily_sell":  d_sell,
+            "monthly_buy":m_buy, "monthly_sell":m_sell,
+        },
     }
 
     # ── 1. Stats par HEURE UTC (depuis hourly) ────────────────────────────
@@ -233,19 +281,38 @@ def compute_stats_for_symbol(sym, cfg, macro_context):
                 bear = sum(1 for r in rets if r < 0)
                 avg  = sum(rets) / len(rets)
                 volatility = statistics.stdev(rets) if len(rets) > 1 else 0
+
+                # [PERSONALISE] Seuil direction calibré par actif
+                direction = "BUY"  if avg > h_buy  else \
+                            "SELL" if avg < h_sell else "NEUTRAL"
+
+                # bull_rate pondéré: bougies avec amplitude > 50% du range typique
+                # pèsent 2x plus que les micro-bougies (moins de bruit)
+                range_pct  = abs(h_buy) * 6.67  # range typique estimé
+                strong_bull = sum(1 for r in rets if r >  range_pct * 0.3)
+                strong_bear = sum(1 for r in rets if r < -range_pct * 0.3)
+                total_strong = strong_bull + strong_bear
+                weighted_bull = (strong_bull * 2 + (bull - strong_bull)) / \
+                                (total_strong + (len(rets) - total_strong)) \
+                                if len(rets) > 0 else 0.5
+
                 hour_stats[str(h)] = {
-                    "bull_rate":    round(bull / len(rets), 3),
-                    "bear_rate":    round(bear / len(rets), 3),
-                    "avg_return":   round(avg, 4),
-                    "volatility":   round(volatility, 4),
-                    "n_samples":    len(rets),
-                    "direction":    "BUY"  if avg > 0.03  else
-                                    "SELL" if avg < -0.03 else "NEUTRAL",
-                    "insufficient": False,
+                    "bull_rate":       round(bull / len(rets), 3),
+                    "bull_rate_weighted": round(max(0, min(1, weighted_bull)), 3),
+                    "bear_rate":       round(bear / len(rets), 3),
+                    "avg_return":      round(avg, 4),
+                    "volatility":      round(volatility, 4),
+                    "n_samples":       len(rets),
+                    "direction":       direction,
+                    "threshold_used":  h_buy,
+                    "insufficient":    False,
                 }
             else:
-                hour_stats[str(h)] = {"direction": "NEUTRAL", "insufficient": True,
-                                       "n_samples": len(rets)}
+                hour_stats[str(h)] = {
+                    "direction":  "NEUTRAL",
+                    "insufficient": True,
+                    "n_samples":  len(rets),
+                }
 
     result["hour_stats"] = hour_stats
 
@@ -262,12 +329,15 @@ def compute_stats_for_symbol(sym, cfg, macro_context):
         if len(rets) >= 30:
             bull = sum(1 for r in rets if r > 0)
             avg  = sum(rets) / len(rets)
+            # [PERSONALISE] seuil daily par actif
+            direction = "BUY"  if avg > d_buy  else \
+                        "SELL" if avg < d_sell else "NEUTRAL"
             weekday_stats[weekday_names[wd]] = {
                 "bull_rate":  round(bull / len(rets), 3),
                 "avg_return": round(avg, 4),
                 "n_samples":  len(rets),
-                "direction":  "BUY"  if avg > 0.05 else
-                              "SELL" if avg < -0.05 else "NEUTRAL",
+                "direction":  direction,
+                "threshold_used": d_buy,
             }
 
     result["weekday_stats"] = weekday_stats
@@ -286,12 +356,15 @@ def compute_stats_for_symbol(sym, cfg, macro_context):
         if len(rets) >= 15:
             bull = sum(1 for r in rets if r > 0)
             avg  = sum(rets) / len(rets)
+            # [PERSONALISE] seuil mensuel par actif
+            direction = "BUY"  if avg > m_buy  else \
+                        "SELL" if avg < m_sell else "NEUTRAL"
             month_stats[month_names[m]] = {
                 "bull_rate":  round(bull / len(rets), 3),
                 "avg_return": round(avg, 4),
                 "n_samples":  len(rets),
-                "direction":  "BUY"  if avg > 0.05 else
-                              "SELL" if avg < -0.05 else "NEUTRAL",
+                "direction":  direction,
+                "threshold_used": m_buy,
             }
 
     result["month_stats"] = month_stats
@@ -442,11 +515,21 @@ def compute_stats_for_symbol(sym, cfg, macro_context):
                     "avg_return": round(avg, 4),
                     "volatility": round(vol, 4),
                     "n_samples":  len(all_rets),
-                    "direction":  "BUY"  if avg > 0.03 else
-                                  "SELL" if avg < -0.03 else "NEUTRAL",
+                    # [PERSONALISE] seuil session = même que seuil horaire
+                    "direction":  "BUY"  if avg > h_buy  else
+                                  "SELL" if avg < h_sell else "NEUTRAL",
+                    "threshold_used": h_buy,
                 }
 
     result["session_stats"] = session_stats
+
+    # ── 9. Résumé des seuils utilisés ─────────────────────────────────────
+    result["calibration"] = {
+        "hourly_signal_threshold": h_buy,
+        "daily_signal_threshold":  d_buy,
+        "monthly_signal_threshold":m_buy,
+        "note": f"Seuils calibrés pour {sym} (range horaire typique ~{abs(h_buy)/0.15:.2f}%)",
+    }
 
     return result
 
