@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: omega-titan-server
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn staline_server:app --host 0.0.0.0 --port $PORT --workers 1
+    envVars:
+      - key: STALINE_API_KEY
+        value: STALINE-ULTRA-KEY-2025
+      - key: FINNHUB_API_KEY
+        value: ""
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+    # Fichiers requis dans le repo:
+    # - staline_server.py        (renommer staline_server_py.py)
+    # - SMART_HOUR_ENGINE.py     (V30 - NOUVEAU - OBLIGATOIRE)
+    # - HISTORICAL_STATS_ENGINE.py
+    # - stats_10y.json           (145KB - OBLIGATOIRE pour V30)
+    # - memory_db.json           (utiliser memory_db_corrige.json)
+    # - feedback_db.json         (utiliser feedback_db_corrige.json)
