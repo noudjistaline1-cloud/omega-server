@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: omega-server
+    runtime: python
+    plan: free
+    buildCommand: pip install --no-cache-dir -r requirements.txt
+    startCommand: uvicorn staline_server_V14:app --host 0.0.0.0 --port 10000 --workers 1 --timeout-keep-alive 30
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /health

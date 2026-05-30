@@ -263,6 +263,7 @@ ASSET_PROFILES = {
     "ETHUSD": {"type":"crypto",    "geo_pol":"bear", "etf":["ETHA"]},
     "XAUUSD": {"type":"metal",     "geo_pol":"bull", "etf":["GLD","IAU"]},
     "XAGUSD": {"type":"metal",     "geo_pol":"bull", "etf":["SLV"]},
+    "XAGAUD": {"type":"metal",     "geo_pol":"bull", "etf":["SLV"]},
     "EURUSD": {"type":"forex",     "geo_pol":"neutral","etf":["FXE"]},
     "GBPUSD": {"type":"forex",     "geo_pol":"neutral","etf":["FXB"]},
     "USDJPY": {"type":"forex",     "geo_pol":"bear", "etf":["FXY"]},
