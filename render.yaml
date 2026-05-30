@@ -1,13 +1,29 @@
-services:
-  - type: web
-    name: omega-server
-    runtime: python
-    plan: free
-    buildCommand: pip install --no-cache-dir -r requirements.txt
-    startCommand: uvicorn staline_server_V14:app --host 0.0.0.0 --port 10000 --workers 1 --timeout-keep-alive 30
+   startCommand: uvicorn staline_server:app --host 0.0.0.0 --port 10000 --workers 1 --timeout-keep-alive 30
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: OMEGA_SERVER_URL
+        value: https://omega-server-90mu.onrender.com
+      - key: STALINE_API_KEY
+        value: STALINE-ULTRA-KEY-2025
     healthCheckPath: /health
+ 
+  - type: worker
+    name: world-scanner
+    runtime: python
+    plan: free
+    buildCommand: pip install --no-cache-dir -r requirements.txt
+    startCommand: python world_scanner.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: OMEGA_SERVER_URL
+        value: https://omega-server-90mu.onrender.com
+      - key: STALINE_API_KEY
+        value: STALINE-ULTRA-KEY-2025
+      - key: PUSH_INTERVAL_SEC
+        value: "30"
