@@ -15,7 +15,7 @@ services:
         value: "3.11.0"
       - key: OMEGA_SERVER_URL
         value: https://omega-server-90mu.onrender.com
-
+ 
   - type: worker
     name: world-scanner
     env: python
