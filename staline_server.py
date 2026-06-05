@@ -112,7 +112,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 #                   • Auto-Spread Buffer : sl_buffer dynamique selon spread live
 #                   • Endpoint /news_guard/{symbol}
 #
-#  [V25-MODULE-2]  LIQUIDATION MAP & SMART MONEY TRACKER
+#  [V25-MODULE-2]  LIQUIDATION MAP & SMART MONEY TRACKER 
 #                   • Détection zones de chasse SL (niveaux ronds ± ATR×0.35)
 #                   • Funding Rate Arbitrage : Long Squeeze / Short Squeeze BTC/ETH
 #                   • Crowd sentiment (ratio L/S) → danger_score
