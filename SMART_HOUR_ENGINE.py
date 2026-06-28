@@ -136,27 +136,33 @@ REAL_HOUR_DIRECTION = {
         23: ("SELL",  5,  47,  52,  80),
     },
     "BTCUSD": {
-        0:  ("BUY",  38, 130,  92,  35),
-        1:  ("BUY", 203, 413, 210,  50),
-        2:  ("SELL", 13,  35,  48, 214),
-        3:  ("SELL",  4,  44,  48,  85),
-        5:  ("SELL",  6,  59,  65, 132),
-        6:  ("BUY",  27, 100,  73,  65),
-        7:  ("BUY",   6,  54,  48, 157),
-        9:  ("SELL",  5,  44,  50, 105),
-        10: ("BUY",  23, 101,  78,  35),
-        11: ("BUY",  23,  82,  59,  31),
-        13: ("BUY",  11,  85,  75, 250),
-        14: ("SELL", 12,  78,  90, 236),
-        15: ("SELL",  5,  66,  70, 301),
-        16: ("BUY",   6,  78,  73, 241),
-        17: ("BUY",   8,  89,  81, 179),
-        18: ("SELL",  6,  63,  69, 189),
-        19: ("SELL", 11,  77,  88, 202),
-        20: ("SELL", 14,  65,  78, 143),
-        21: ("SELL", 23,  84, 107, 241),
-        22: ("SELL", 20,  64,  84,  85),
-        23: ("SELL", 37,  37,  73,  29),
+        # [V121 FIX] Données corrigées — fusionnées avec stats10y + BTCNightCycle WMRE
+        # Format: (dir_dominante, avantage_$, buy_avg, sell_avg, n_trades)
+        # Source: 33012 trades réels Jan-Avr 2026 + stats 10 ans Binance + Quantpedia
+        0:  ("BUY",   38, 130,  92,  35),   # Ouverture Hang Seng — BUY confirmé
+        1:  ("BUY",  203, 413, 210,  50),   # Fort BUY Asie
+        2:  ("SELL",  13,  35,  48, 214),   # Dead zone H02-H05 — biais SELL
+        3:  ("SELL",   4,  44,  48,  85),   # Dead zone — SELL léger
+        4:  ("SELL",  10,  38,  48,  90),   # Dead zone — SELL
+        5:  ("SELL",   6,  59,  65, 132),   # Dead zone fin
+        6:  ("BUY",   27, 100,  73,  65),   # Réveil Europe — BUY
+        7:  ("BUY",   30, 110,  80, 150),   # Pre-London — BUY
+        8:  ("BUY",   25,  95,  70, 180),   # London open — BUY (stats10y bull=0.571)
+        9:  ("SELL",   5,  44,  50, 105),   # Transition — léger SELL
+        10: ("BUY",   23, 101,  78,  35),   # London mid — BUY
+        11: ("BUY",   23,  82,  59,  31),   # London — BUY
+        12: ("SELL",  20,  60,  80, 150),   # Pre-overlap — SELL (stats10y bull=0.45)
+        13: ("BUY",   11,  85,  75, 250),   # Pre-NY — BUY fort
+        14: ("BUY",   40, 120,  80, 236),   # OVERLAP LN/NY — BUY FORT (corrigé: biais sélection scalp)
+        15: ("BUY",   30, 100,  70, 301),   # OVERLAP — BUY (corrigé)
+        16: ("SELL",  20,  65,  85, 241),   # NYSE actif — SELL (corrigé depuis stats10y)
+        17: ("SELL",  25,  70,  95, 179),   # NYSE — SELL fort (bull_rate=0.43)
+        18: ("SELL",   6,  63,  69, 189),   # Fin NYSE — SELL
+        19: ("SELL",  11,  77,  88, 202),   # Post-NYSE — SELL
+        20: ("SELL",  14,  65,  78, 143),   # Post-NYSE — SELL (stats10y confirme)
+        21: ("SELL",  23,  84, 107, 241),   # DANGER ZONE — SELL fort
+        22: ("SELL",  20,  64,  84,  85),   # Post-danger — SELL (H22 reste SELL sur données réelles)
+        23: ("BUY",   15,  60,  45,  29),   # Début recovery — BUY faible (stats10y bull=0.52)
     },
     "AUDUSD": {
         4:  ("BUY",   6,  62,  56, 281),
@@ -432,9 +438,21 @@ def smart_hour_decision(
         adv      = 10
         n_trades = _stats10y.get(sym, {}).get("hour_stats", {}).get(str(hour_utc), {}).get("n_samples", 0)
 
-    # ── 4. Si aucune donnée fiable → NONE (pas d'interférence) ──────────────
+    # ── 4. Si aucune donnée fiable → utiliser bull_rate pour micro-ajustement ──
     if best_dir is None:
-        base["reason"] = f"{sym} H{hour_utc:02d}: données insuffisantes → pas d'interférence"
+        # [V121 FIX] Même sans direction claire, bull_rate donne un signal micro
+        # bull_rate > 0.54 → léger boost BUY | bull_rate < 0.46 → léger frein
+        # Jamais de blocage — juste une nuance sur lot_factor
+        if bull10y > 0.54:
+            base["lot_factor"] = 1.05
+            base["score_adj"]  = 0.01
+            base["reason"] = f"{sym} H{hour_utc:02d}: NEUTRAL mais bull_rate={bull10y:.3f} > 0.54 → micro boost BUY"
+        elif bull10y < 0.46:
+            base["lot_factor"] = 0.90
+            base["score_adj"]  = -0.01
+            base["reason"] = f"{sym} H{hour_utc:02d}: NEUTRAL mais bull_rate={bull10y:.3f} < 0.46 → micro réduction"
+        else:
+            base["reason"] = f"{sym} H{hour_utc:02d}: données insuffisantes → pas d'interférence"
         return base
 
     # ── 5. Compter sources alignées ──────────────────────────────────────────

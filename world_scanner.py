@@ -64,6 +64,15 @@
 # LANCER  : python world_scanner.py
 # ================================================================================
 
+# [SHE-CONNECT] Import SMART_HOUR_ENGINE pour décision horaire basée sur stats 10 ans
+try:
+    from SMART_HOUR_ENGINE import smart_hour_decision, get_forced_direction, _load_stats10y
+    _SHE_AVAILABLE = True
+    _load_stats10y()  # Précharger stats_10y.json au démarrage
+except ImportError:
+    _SHE_AVAILABLE = False
+    logger = None  # sera défini plus loin
+
 import asyncio
 import aiohttp
 import httpx
@@ -91,10 +100,11 @@ PUSH_INTERVAL = int(os.getenv("PUSH_INTERVAL_SEC", "30"))
 PUSH_TIMEOUT  = 12
 
 # Seuils direction
-SCORE_BUY      =  0.18
-SCORE_SELL     = -0.18
+# [V134 FIX] Seuils réduits → plus de BUY/SELL, moins de NEUTRAL
+SCORE_BUY      =  0.12   # était 0.18 — 2 sources alignées suffisent
+SCORE_SELL     = -0.12
 SCORE_CRITICAL = -0.75
-SCORE_RESPIR   =  0.10
+SCORE_RESPIR   =  0.06
 
 # TTL refresh (secondes)
 TTL_RSS      = 60
@@ -987,6 +997,10 @@ _raw_cache = {
     "liquidations": {"data": {}, "ts": 0.0},
     "ofi":        {"data": {}, "ts": 0.0},
     "seasonality": {"data": {}, "ts": 0.0},
+    "onchain":    {"data": {}, "ts": 0.0},   # [BOOST] On-chain BTC metrics
+    "newsapi":    {"data": {}, "ts": 0.0},   # [BOOST] News sentiment API
+    "reddit":     {"data": {}, "ts": 0.0},   # [BOOST] Reddit sentiment
+    "econocal":   {"data": {}, "ts": 0.0},   # [BOOST] Economic calendar enrichi
     "gdelt":      {"data": {}, "ts": 0.0},
     "fomc":       {"data": {}, "ts": 0.0},
     "pmi":        {"data": {}, "ts": 0.0},
@@ -2711,6 +2725,23 @@ def compute_asset_state(
         _correl_adj           # [WS-NEW] Ajustement corrélation DXY
     )), 4)
 
+
+    # [SHE-CONNECT] Intégration SMART_HOUR_ENGINE — décision horaire stats 10 ans
+    # Si SHE disponible : valider/corriger la direction selon les stats 10 ans
+    _she_dir = None
+    _she_conf = 0.0
+    if _SHE_AVAILABLE:
+        try:
+            _she_result = smart_hour_decision(sym, hour_utc, macro={
+                "dxy": float(macro.get("dxy", 101)),
+                "vix": float(macro.get("vix", 18)),
+            })
+            _she_dir  = _she_result.get("direction")   # "BUY"/"SELL"/"WAIT"
+            _she_conf = float(_she_result.get("confidence", 0.0))
+            _she_note = _she_result.get("note", "")
+        except Exception as _she_e:
+            pass
+
     # Direction
     force_release = False
     _fond_dir = 0  # direction de fond (1d), utilisée pour le boost de conviction plus bas
@@ -2737,6 +2768,23 @@ def compute_asset_state(
         direction = "NEUTRAL"
 
     conviction = round(min(1.0, abs(final) * 1.8), 2)
+
+    # [SHE-CONNECT] Boost conviction si SHE confirme, réduit si contradictoire
+    if _she_dir and _she_conf >= 0.55:
+        _she_numeric = 1 if _she_dir == "BUY" else (-1 if _she_dir == "SELL" else 0)
+        _dir_numeric = 1 if direction == "BUY" else (-1 if direction == "SELL" else 0)
+        if _she_numeric != 0 and _she_numeric == _dir_numeric:
+            # Alignés → boost conviction
+            conviction = round(min(1.0, conviction + _she_conf * 0.12), 2)
+        elif _she_numeric != 0 and _she_numeric != _dir_numeric and direction in ("BUY","SELL"):
+            # Contradiction forte → réduire conviction
+            if _she_conf >= 0.70:
+                conviction = round(max(0.10, conviction * 0.70), 2)
+        elif _she_numeric != 0 and direction in ("NEUTRAL","RESPIRATION") and _she_conf >= 0.65:
+            # Scanner neutre mais SHE fort → adopter la direction SHE
+            direction = _she_dir
+            conviction = round(_she_conf * 0.75, 2)
+
 
     # [V125-PRECISION-3] Divergence RSI majeure → traduction en BUY/SELL fort,
     # PAS un nouveau label "REVERSAL". L'EA (g_OmegaDirection) ne reconnaît que
@@ -5140,6 +5188,9 @@ class WorldSentinel:
                     # [BREATH] Données respirations institutionnelles
                     "breath":            _raw_cache.get("breath", {}).get("composite", {}).get("data", {}),
                     "breath_signal":     _raw_cache.get("breath", {}).get("composite", {}).get("data", {}).get("breath_signal", "NEUTRAL"),
+                    # [V134] Signaux opérationnels
+                    "zerosl_mode":       True,
+                    "trade_always":      True,
                     "breath_score":      _raw_cache.get("breath", {}).get("composite", {}).get("data", {}).get("breath_composite_score", 0.0),
                     "breath_intensity":  _raw_cache.get("breath", {}).get("composite", {}).get("data", {}).get("breath_intensity", "WEAK"),
                     "breath_reasons":    _raw_cache.get("breath", {}).get("composite", {}).get("data", {}).get("breath_reasons", []),

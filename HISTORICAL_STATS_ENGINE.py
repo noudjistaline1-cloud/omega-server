@@ -634,6 +634,35 @@ def main():
     print(f"   Taille: {size_kb} KB")
     print(f"\n→ Uploader stats_10y.json sur GitHub dans le dépôt omega-server")
 
+    # [HSE-AUTOPUSH] Pousser automatiquement les stats vers le serveur
+    # après génération — plus besoin d'upload manuel
+    import os, urllib.request, urllib.error
+    _server_url = os.environ.get("OMEGA_SERVER_URL", "https://omega-server-90mu.onrender.com")
+    _api_key    = os.environ.get("OMEGA_API_KEY", "STALINE-ULTRA-KEY-2025")
+    try:
+        import json as _json2
+        _payload = _json2.dumps({
+            "stats": output,
+            "version": output.get("version", "HSE-auto"),
+            "source": "HSE_AUTOPUSH"
+        }).encode('utf-8')
+        _req = urllib.request.Request(
+            f"{_server_url}/update_stats10y",
+            data=_payload,
+            headers={
+                "Content-Type":  "application/json",
+                "Authorization": f"Bearer {_api_key}",
+            },
+            method="POST"
+        )
+        with urllib.request.urlopen(_req, timeout=30) as _r:
+            print(f"\n✅ [HSE-AUTOPUSH] Stats poussées vers serveur: HTTP {_r.status}")
+    except Exception as _push_e:
+        print(f"\n⚠️  [HSE-AUTOPUSH] Push échoué (upload manuel nécessaire): {_push_e}")
+        print(f"→ Uploader stats_10y.json sur GitHub dans le dépôt omega-server")
+
+
+
 if __name__ == "__main__":
     main()
 
