@@ -1,0 +1,1362 @@
+{
+  "XAUUSDm": {
+    "0": {
+      "dir": "sell",
+      "wr": 1.0,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 12t] SELL WR=100%"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=100% sell=100%) \u2014 pas de dominance claire"
+    },
+    "2": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=94% sell=100%) \u2014 pas de dominance claire"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (9t)"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (11t)"
+    },
+    "5": {
+      "dir": "sell",
+      "wr": 0.9661,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 59t] SELL WR=97%"
+    },
+    "6": {
+      "dir": "sell",
+      "wr": 0.9565,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 69t] SELL WR=96%"
+    },
+    "7": {
+      "dir": "sell",
+      "wr": 0.96,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 25t] SELL WR=96%"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=82% sell=78%) \u2014 pas de dominance claire"
+    },
+    "9": {
+      "dir": "buy",
+      "wr": 0.8922,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 167t] BUY WR=89%"
+    },
+    "10": {
+      "dir": "sell",
+      "wr": 0.871,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 62t] SELL WR=87%"
+    },
+    "11": {
+      "dir": "sell",
+      "wr": 0.9062,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 128t] SELL WR=91%"
+    },
+    "12": {
+      "dir": "buy",
+      "wr": 0.9011,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 91t] BUY WR=90%"
+    },
+    "13": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=89% sell=88%) \u2014 pas de dominance claire"
+    },
+    "14": {
+      "dir": "buy",
+      "wr": 0.7619,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 21t] BUY WR=76%"
+    },
+    "15": {
+      "dir": "sell",
+      "wr": 0.9091,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 11t] SELL WR=91%"
+    },
+    "16": {
+      "dir": "sell",
+      "wr": 0.8981,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 108t] SELL WR=90%"
+    },
+    "17": {
+      "dir": "sell",
+      "wr": 0.8687,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 99t] SELL WR=87%"
+    },
+    "18": {
+      "dir": "sell",
+      "wr": 0.9091,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 220t] SELL WR=91%"
+    },
+    "19": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=81% sell=100%) \u2014 pas de dominance claire"
+    },
+    "20": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=100% sell=50%) \u2014 pas de dominance claire"
+    },
+    "21": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (12t)"
+    },
+    "22": {
+      "dir": "buy",
+      "wr": 0.8947,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 19t] BUY WR=89%"
+    },
+    "23": {
+      "dir": "sell",
+      "wr": 0.9714,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 35t] SELL WR=97%"
+    }
+  },
+  "BTCUSDm": {
+    "0": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=75% sell=70%) \u2014 pas de dominance claire"
+    },
+    "1": {
+      "dir": "sell",
+      "wr": 0.9787,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 47t] SELL WR=98%"
+    },
+    "2": {
+      "dir": "sell",
+      "wr": 0.973,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 37t] SELL WR=97%"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=91% sell=92%) \u2014 pas de dominance claire"
+    },
+    "4": {
+      "dir": "sell",
+      "wr": 0.9091,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 99t] SELL WR=91%"
+    },
+    "5": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=83% sell=87%) \u2014 pas de dominance claire"
+    },
+    "6": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=91% sell=91%) \u2014 pas de dominance claire"
+    },
+    "7": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=94% sell=94%) \u2014 pas de dominance claire"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=85% sell=88%) \u2014 pas de dominance claire"
+    },
+    "9": {
+      "dir": "sell",
+      "wr": 0.8967,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 213t] SELL WR=90%"
+    },
+    "10": {
+      "dir": "buy",
+      "wr": 0.9273,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 165t] BUY WR=93%"
+    },
+    "11": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=83% sell=88%) \u2014 pas de dominance claire"
+    },
+    "12": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=92% sell=93%) \u2014 pas de dominance claire"
+    },
+    "13": {
+      "dir": "buy",
+      "wr": 0.936,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 125t] BUY WR=94%"
+    },
+    "14": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=93% sell=93%) \u2014 pas de dominance claire"
+    },
+    "15": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=91% sell=87%) \u2014 pas de dominance claire"
+    },
+    "16": {
+      "dir": "buy",
+      "wr": 0.96,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 150t] BUY WR=96%"
+    },
+    "17": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=92% sell=89%) \u2014 pas de dominance claire"
+    },
+    "18": {
+      "dir": "buy",
+      "wr": 0.9,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 190t] BUY WR=90%"
+    },
+    "19": {
+      "dir": "buy",
+      "wr": 0.9524,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 84t] BUY WR=95%"
+    },
+    "20": {
+      "dir": "sell",
+      "wr": 0.8684,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 38t] SELL WR=87%"
+    },
+    "21": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=91% sell=90%) \u2014 pas de dominance claire"
+    },
+    "22": {
+      "dir": "sell",
+      "wr": 0.9355,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 31t] SELL WR=94%"
+    },
+    "23": {
+      "dir": "sell",
+      "wr": 0.913,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 23t] SELL WR=91%"
+    }
+  },
+  "XAGUSDm": {
+    "0": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=86% sell=88%) \u2014 pas de dominance claire"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (3t)"
+    },
+    "2": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=88% sell=86%) \u2014 pas de dominance claire"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=83% sell=73%) \u2014 pas de dominance claire"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (9t)"
+    },
+    "5": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (8t)"
+    },
+    "6": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "7": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (13t)"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "9": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=88% sell=69%) \u2014 pas de dominance claire"
+    },
+    "10": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=80% sell=85%) \u2014 pas de dominance claire"
+    },
+    "11": {
+      "dir": "buy",
+      "wr": 0.9412,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 34t] BUY WR=94%"
+    },
+    "12": {
+      "dir": "sell",
+      "wr": 0.8,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 20t] SELL WR=80%"
+    },
+    "13": {
+      "dir": "sell",
+      "wr": 1.0,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 12t] SELL WR=100%"
+    },
+    "14": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (12t)"
+    },
+    "15": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=83% sell=78%) \u2014 pas de dominance claire"
+    },
+    "16": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "17": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "18": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "19": {
+      "dir": "buy",
+      "wr": 0.9444,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 18t] BUY WR=94%"
+    },
+    "20": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "21": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "22": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=77% sell=79%) \u2014 pas de dominance claire"
+    },
+    "23": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=69% sell=70%) \u2014 pas de dominance claire"
+    }
+  },
+  "EURUSDm": {
+    "0": {
+      "dir": "sell",
+      "wr": 0.963,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 27t] SELL WR=96%"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    },
+    "2": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (11t)"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "5": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "6": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (1t)"
+    },
+    "7": {
+      "dir": "sell",
+      "wr": 1.0,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 18t] SELL WR=100%"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "9": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (13t)"
+    },
+    "10": {
+      "dir": "sell",
+      "wr": 0.9115,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 113t] SELL WR=91%"
+    },
+    "11": {
+      "dir": "sell",
+      "wr": 0.8866,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 97t] SELL WR=89%"
+    },
+    "12": {
+      "dir": "sell",
+      "wr": 1.0,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 48t] SELL WR=100%"
+    },
+    "13": {
+      "dir": "sell",
+      "wr": 0.7579,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 190t] SELL WR=76%"
+    },
+    "14": {
+      "dir": "sell",
+      "wr": 0.9677,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 31t] SELL WR=97%"
+    },
+    "15": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=100% sell=88%) \u2014 pas de dominance claire"
+    },
+    "16": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (8t)"
+    },
+    "17": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (13t)"
+    },
+    "18": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (5t)"
+    },
+    "19": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (13t)"
+    },
+    "20": {
+      "dir": "buy",
+      "wr": 0.8519,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 27t] BUY WR=85%"
+    },
+    "21": {
+      "dir": "buy",
+      "wr": 0.9835,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 121t] BUY WR=98%"
+    },
+    "22": {
+      "dir": "buy",
+      "wr": 1.0,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 51t] BUY WR=100%"
+    },
+    "23": {
+      "dir": "sell",
+      "wr": 1.0,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 13t] SELL WR=100%"
+    }
+  },
+  "GBPUSDm": {
+    "0": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "2": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (3t)"
+    },
+    "5": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (3t)"
+    },
+    "6": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "7": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "9": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (12t)"
+    },
+    "10": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    },
+    "11": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=77% sell=100%) \u2014 pas de dominance claire"
+    },
+    "12": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=67% sell=100%) \u2014 pas de dominance claire"
+    },
+    "13": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (9t)"
+    },
+    "14": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=100% sell=79%) \u2014 pas de dominance claire"
+    },
+    "15": {
+      "dir": "sell",
+      "wr": 0.8696,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 23t] SELL WR=87%"
+    },
+    "16": {
+      "dir": "sell",
+      "wr": 0.963,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 27t] SELL WR=96%"
+    },
+    "17": {
+      "dir": "sell",
+      "wr": 0.7838,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 37t] SELL WR=78%"
+    },
+    "18": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (8t)"
+    },
+    "19": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "20": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "21": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=50% sell=6%) \u2014 pas de dominance claire"
+    },
+    "22": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "23": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    }
+  },
+  "USDJPYm": {
+    "0": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (5t)"
+    },
+    "2": {
+      "dir": "buy",
+      "wr": 0.8,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 10t] BUY WR=80%"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (8t)"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "5": {
+      "dir": "sell",
+      "wr": 0.9023,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 133t] SELL WR=90%"
+    },
+    "6": {
+      "dir": "buy",
+      "wr": 0.8947,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 38t] BUY WR=89%"
+    },
+    "7": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=97% sell=100%) \u2014 pas de dominance claire"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "9": {
+      "dir": "sell",
+      "wr": 0.9286,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 14t] SELL WR=93%"
+    },
+    "10": {
+      "dir": "buy",
+      "wr": 0.9214,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 280t] BUY WR=92%"
+    },
+    "11": {
+      "dir": "buy",
+      "wr": 0.7576,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 66t] BUY WR=76%"
+    },
+    "12": {
+      "dir": "sell",
+      "wr": 0.9667,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 60t] SELL WR=97%"
+    },
+    "13": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (14t)"
+    },
+    "14": {
+      "dir": "sell",
+      "wr": 0.8,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 15t] SELL WR=80%"
+    },
+    "15": {
+      "dir": "sell",
+      "wr": 0.9375,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 16t] SELL WR=94%"
+    },
+    "16": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (8t)"
+    },
+    "17": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=100% sell=68%) \u2014 pas de dominance claire"
+    },
+    "18": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "19": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "20": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "21": {
+      "dir": "buy",
+      "wr": 0.6,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 25t] BUY WR=60%"
+    },
+    "22": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=90% sell=90%) \u2014 pas de dominance claire"
+    },
+    "23": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=85% sell=85%) \u2014 pas de dominance claire"
+    }
+  },
+  "USDCHFm": {
+    "0": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (5t)"
+    },
+    "2": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (3t)"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "5": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "6": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "7": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (5t)"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "9": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "10": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (11t)"
+    },
+    "11": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "12": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (7t)"
+    },
+    "13": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (9t)"
+    },
+    "14": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "15": {
+      "dir": "sell",
+      "wr": 0.8421,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 19t] SELL WR=84%"
+    },
+    "16": {
+      "dir": "sell",
+      "wr": 1.0,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 10t] SELL WR=100%"
+    },
+    "17": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=50% sell=43%) \u2014 pas de dominance claire"
+    },
+    "18": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=100% sell=56%) \u2014 pas de dominance claire"
+    },
+    "19": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    },
+    "20": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "21": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (10t)"
+    },
+    "22": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    },
+    "23": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    }
+  },
+  "AUDUSDm": {
+    "0": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "1": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (6t)"
+    },
+    "2": {
+      "dir": "sell",
+      "wr": 0.8519,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 54t] SELL WR=85%"
+    },
+    "3": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "4": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (1t)"
+    },
+    "5": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "6": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (1t)"
+    },
+    "7": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "8": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "9": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "10": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "11": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "12": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (3t)"
+    },
+    "13": {
+      "dir": "sell",
+      "wr": 0.9435,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 354t] SELL WR=94%"
+    },
+    "14": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (13t)"
+    },
+    "15": {
+      "dir": "sell",
+      "wr": 0.8542,
+      "conf": 2,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 48t] SELL WR=85%"
+    },
+    "16": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (4t)"
+    },
+    "17": {
+      "dir": "sell",
+      "wr": 0.9043,
+      "conf": 3,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026 115t] SELL WR=90%"
+    },
+    "18": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] WR proches (buy=50% sell=50%) \u2014 pas de dominance claire"
+    },
+    "19": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (1t)"
+    },
+    "20": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "21": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    },
+    "22": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (2t)"
+    },
+    "23": {
+      "dir": "wait",
+      "wr": 0.5,
+      "conf": 1,
+      "lot": 1.0,
+      "note": "[RECALC-JUL2026] donn\u00e9es insuffisantes (0t)"
+    }
+  }
+}
