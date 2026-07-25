@@ -1,0 +1,101 @@
+<div style="max-width:720px;margin:0 auto;font-family:-apple-system,Segoe UI,sans-serif;color:#e8e8f0;background:#12121a;padding:24px;border-radius:12px;">
+  <h2 style="margin-top:0;">AEGIS — Supervision</h2>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+    <input id="baseUrl" placeholder="URL backend, ex: http://127.0.0.1:8000" style="flex:2;min-width:220px;padding:8px;border-radius:6px;border:1px solid #333;background:#1c1c28;color:#fff;">
+    <input id="apiKey" placeholder="Clé API" type="password" style="flex:1;min-width:140px;padding:8px;border-radius:6px;border:1px solid #333;background:#1c1c28;color:#fff;">
+    <button id="loadBtn" style="padding:8px 16px;border-radius:6px;border:none;background:#5b6ef5;color:#fff;cursor:pointer;">Charger</button>
+  </div>
+
+  <div id="statusBox" style="padding:10px 14px;border-radius:8px;background:#1c1c28;margin-bottom:16px;font-size:14px;">
+    En attente de connexion...
+  </div>
+
+  <div id="content" style="display:none;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+      <div style="background:#1c1c28;padding:14px;border-radius:8px;">
+        <div style="opacity:.6;font-size:12px;">TRADES GAGNÉS / PERDUS</div>
+        <div id="winloss" style="font-size:22px;font-weight:600;">-</div>
+      </div>
+      <div style="background:#1c1c28;padding:14px;border-radius:8px;">
+        <div style="opacity:.6;font-size:12px;">TAUX DE RÉUSSITE</div>
+        <div id="winrate" style="font-size:22px;font-weight:600;">-</div>
+      </div>
+      <div style="background:#1c1c28;padding:14px;border-radius:8px;">
+        <div style="opacity:.6;font-size:12px;">CIRCUIT BREAKER</div>
+        <div id="cb" style="font-size:22px;font-weight:600;">-</div>
+      </div>
+      <div style="background:#1c1c28;padding:14px;border-radius:8px;">
+        <div style="opacity:.6;font-size:12px;">KILL SWITCH</div>
+        <div id="ks" style="font-size:22px;font-weight:600;">-</div>
+      </div>
+    </div>
+
+    <div style="background:#1c1c28;padding:14px;border-radius:8px;margin-bottom:12px;">
+      <div style="opacity:.6;font-size:12px;margin-bottom:8px;">POIDS APPRIS (auto-ajustés à chaque trade fermé)</div>
+      <div id="weights"></div>
+    </div>
+
+    <div style="background:#1c1c28;padding:14px;border-radius:8px;">
+      <div style="opacity:.6;font-size:12px;margin-bottom:8px;">EXPOSITION PAR COMPTE / GROUPE D'ACTIFS</div>
+      <div id="exposure" style="font-size:13px;white-space:pre-wrap;font-family:monospace;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function loadStats() {
+  const base = document.getElementById('baseUrl').value.replace(/\/$/, '');
+  const key = document.getElementById('apiKey').value;
+  const statusBox = document.getElementById('statusBox');
+  const content = document.getElementById('content');
+
+  if (!base) { statusBox.textContent = "Renseigne l'URL du backend."; return; }
+  statusBox.textContent = "Connexion...";
+
+  try {
+    const healthRes = await fetch(base + '/health');
+    const health = await healthRes.json();
+
+    const statsRes = await fetch(base + '/stats', { headers: { 'X-API-KEY': key } });
+    if (statsRes.status === 401) {
+      statusBox.textContent = "Clé API invalide.";
+      content.style.display = 'none';
+      return;
+    }
+    const stats = await statsRes.json();
+
+    statusBox.textContent = "Connecté — backend en ligne depuis " + new Date(health.started_at).toLocaleString();
+    content.style.display = 'block';
+
+    document.getElementById('winloss').textContent = stats.wins + ' / ' + stats.losses;
+    document.getElementById('winrate').textContent = stats.winrate_pct !== null ? stats.winrate_pct + '%' : 'N/A (pas encore de trade)';
+    document.getElementById('cb').textContent = stats.circuit_breaker_tripped ? '🔴 ACTIF' : '🟢 OK';
+    document.getElementById('ks').textContent = stats.kill_switch ? '🔴 ENGAGÉ' : '🟢 OK';
+
+    const weightsDiv = document.getElementById('weights');
+    weightsDiv.innerHTML = '';
+    for (const [k, v] of Object.entries(stats.weights)) {
+      const pct = Math.min(100, (v / 1.5) * 100);
+      weightsDiv.innerHTML += `
+        <div style="margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
+            <span>${k}</span><span>${v.toFixed(3)}</span>
+          </div>
+          <div style="background:#333;border-radius:4px;height:6px;">
+            <div style="background:#5b6ef5;height:6px;border-radius:4px;width:${pct}%;"></div>
+          </div>
+        </div>`;
+    }
+    weightsDiv.innerHTML += `<div style="opacity:.5;font-size:12px;margin-top:6px;">${stats.weight_updates_count} mise(s) à jour depuis le début</div>`;
+
+    document.getElementById('exposure').textContent = JSON.stringify(stats.exposure, null, 2) || '{}';
+
+  } catch (e) {
+    statusBox.textContent = "Erreur de connexion: " + e.message;
+    content.style.display = 'none';
+  }
+}
+
+document.getElementById('loadBtn').addEventListener('click', loadStats);
+</script>
