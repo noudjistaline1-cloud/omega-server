@@ -261,6 +261,50 @@ class TestDecisionOutcomeLoop:
         assert result is None
 
 
+# --------------------------------------------------------------------------
+# [V49] feedback_get_alpha() doit exposer alpha_adj/winrate (alias de
+# confidence_adj/post_wr) — sans ça, le code en aval qui les lit
+# (score+=fb.get("alpha_adj",0) et compute_trust_score(...,fb.get("winrate",0.5)))
+# ne s'applique jamais / reste toujours neutre.
+# --------------------------------------------------------------------------
+class TestFeedbackAlphaAdjAlias:
+    def test_alpha_adj_and_winrate_present_and_consistent(self):
+        _require_module()
+        fb = srv.feedback_get_alpha("XAUUSD", "TREND", "LONDON", 1, 12)
+        assert "alpha_adj" in fb
+        assert "winrate" in fb
+        assert fb["alpha_adj"] == fb["confidence_adj"]
+        assert fb["winrate"] == fb["post_wr"]
+
+
+# --------------------------------------------------------------------------
+# [V50] AI-17 à paliers avec borne de Wilson — remplace la blacklist binaire.
+# --------------------------------------------------------------------------
+class TestFeedbackRiskTiers:
+    def test_small_sample_never_vetoed(self):
+        _require_module()
+        # Ancien seuil (n=25, WR=16%) aurait blacklisté — nouveau système non,
+        # échantillon trop petit pour une conclusion statistique fiable.
+        t = srv.feedback_risk_tier(25, 4)
+        assert t["veto"] is False
+
+    def test_large_sample_bad_wr_statistically_confirmed_vetoes(self):
+        _require_module()
+        t = srv.feedback_risk_tier(150, 20)
+        assert t["veto"] is True
+
+    def test_moderate_sample_bad_wr_reduces_lot_not_veto(self):
+        _require_module()
+        t = srv.feedback_risk_tier(40, 10)
+        assert t["veto"] is False
+        assert t["lot_cap"] == 0.70
+
+    def test_wilson_lower_bound_sane_bounds(self):
+        _require_module()
+        lb = srv._wilson_lower_bound(50, 100)
+        assert 0.0 <= lb <= 0.50
+
+
 if __name__ == "__main__":
     if _HAS_PYTEST:
         sys.exit(pytest.main([__file__, "-v"]))
