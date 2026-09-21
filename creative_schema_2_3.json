@@ -1,0 +1,30 @@
+{
+  "version": "2.3",
+  "architecture": "creation-first",
+  "creative_engine": "ChatGPT",
+  "references": [
+    "staline_last_lookbook_reference.png",
+    "staline_reference.png",
+    "staline_brand_lockup.png"
+  ],
+  "required_layers": [
+    "concept",
+    "silhouette",
+    "fit",
+    "architecture",
+    "panel_map",
+    "construction",
+    "materials",
+    "palette",
+    "colorways",
+    "cultural_fusion",
+    "market_translation",
+    "model_direction",
+    "photography_direction",
+    "production_artworks",
+    "manufacturing_constraints",
+    "commerce"
+  ],
+  "production_rule": "Only explicitly mapped production_artworks may be sent to the provider.",
+  "approval_rule": "User approval is required before production/publication."
+}
