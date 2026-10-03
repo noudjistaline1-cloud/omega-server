@@ -80,7 +80,7 @@ DIRECTION_THRESHOLDS = {
 def get_thresholds(sym):
     """Retourne (h_buy, h_sell, d_buy, d_sell, m_buy, m_sell) pour le symbole."""
     return DIRECTION_THRESHOLDS.get(
-        sym.upper().replace("m","").replace("M",""),
+        _normalize(sym),   # [FIX-A7] suffixe broker seulement
         DIRECTION_THRESHOLDS["_DEFAULT"]
     )
 
@@ -186,14 +186,27 @@ def fetch_yahoo_hourly(ticker, years=2):
         return []
 
 def fetch_binance_hourly(symbol, limit=5000):
-    """Binance: jusqu'à 5000 bougies horaires (≈208 jours)."""
-    url = (f"https://api.binance.com/api/v3/klines?"
-           f"symbol={symbol}&interval=1h&limit={limit}")
-    data = _get_json(url)
-    if not data:
-        return []
+    """Binance : `limit` bougies horaires (≈208 jours pour 5000).
+    [FIX-HSE-1] L'API Binance plafonne à 1000 bougies par requête : l'ancien appel unique limit=5000 était rejeté.
+    Pagination par endTime, et hôte miroir data-api.binance.vision si api.binance.com est restreint."""
+    bars_raw = []
+    end_ms = None
+    while len(bars_raw) < limit:
+        n = min(1000, limit - len(bars_raw))
+        data = None
+        for host in ("https://api.binance.com", "https://data-api.binance.vision"):
+            url = f"{host}/api/v3/klines?symbol={symbol}&interval=1h&limit={n}" + (f"&endTime={end_ms}" if end_ms else "")
+            data = _get_json(url)
+            if isinstance(data, list) and data:
+                break
+        if not isinstance(data, list) or not data:
+            break
+        bars_raw = data + bars_raw
+        end_ms = int(data[0][0]) - 1
+        if len(data) < n:
+            break
     bars = []
-    for k in data:
+    for k in bars_raw:
         t  = int(k[0]) // 1000
         o  = float(k[1])
         h  = float(k[2])
@@ -717,8 +730,12 @@ def init_historical_stats(path: str = "stats_10y.json") -> bool:
 
 
 def _normalize(sym: str) -> str:
-    """Normalise le symbole: XAUUSDm → XAUUSD"""
-    return sym.upper().replace("M", "").strip()
+    """Normalise le symbole: XAUUSDm → XAUUSD. [FIX-A7] avant : supprimait TOUS les « M » (USDMXN → USDXN)."""
+    s = sym.upper().strip()
+    for suf in (".M", "M", ".PRO", ".RAW", ".A", "."):
+        if s.endswith(suf) and len(s) - len(suf) >= 6:
+            return s[: -len(suf)]
+    return s
 
 
 def get_market_hourly_bias(symbol: str, hour: int) -> dict:

@@ -52,148 +52,128 @@ logger = logging.getLogger("SMART_HOUR_ENGINE")
 # ──────────────────────────────────────────────────────────────────────────────
 
 REAL_HOUR_DIRECTION = {
-    # [FIX-STATS-PERIMEES] Regenere depuis export MT5 verifie (12/01->14/07/2026,
-    # 11454 trades, somme recoupee au centime pres avec le Profit Total Net officiel
-    # du rapport : -4015.50 EUR). Remplace l'ancienne table "33012 trades Jan-Avr 2026
-    # + 9351 trades anterieurs" qui etait en desaccord avec les donnees fraiches sur
-    # plusieurs heures verifiees (ex: XAU H20 etait code BUY/680t/adv$154, la realite
-    # recente est SELL/20t seulement -- echantillon trop faible pour la conviction HIGH
-    # que l'ancienne table donnait). Heures avec <15 trades omises volontairement : le
-    # moteur traite deja une absence d'entree comme "donnees insuffisantes -> pas
-    # d'interference", conforme a la philosophie du fichier ("PAS de dead zones").
-    # [FIX-STATS-08/08] Heures suivantes régénérées depuis export MT5 RÉEL
-    # (compte 133776329, 2026.06.05->08.08, ReportHistory-133776329_reel.html),
-    # remplacées UNIQUEMENT si échantillon frais >= 20 trades (règle de
-    # prudence identique à celle qui a fondé la table du 20/07). Règle de
-    # décision désormais STRICTE et vérifiable : BUY si buy_avg>sell_avg de
-    # plus de 0.15, SELL si l'inverse, WEAK si écart <0.15, DUAL_LOSE si les
-    # deux moyennes sont <=0. Les heures non listées ici gardent leur valeur
-    # du 20/07 (échantillon frais insuffisant pour trancher).
-    # ATTENTION : plusieurs entrées de la table du 20/07 (ex: H14 buy_avg=8 <
-    # sell_avg=17 mais dir="BUY") étaient des valeurs ARRONDIES À L'ENTIER —
-    # la précision réelle ayant servi à fixer "dir" à l'époque n'est plus
-    # récupérable depuis ce fichier. Les valeurs ci-dessous sont en précision
-    # complète (2 décimales), pas arrondies, pour éviter de reproduire ce
-    # problème pour la prochaine mise à jour.
+    # [FIX-SHE-ESPERANCE 03/10/2026] Table REGENEREE depuis real_stats_recalc.json (export MT5 verifie 12/01->14/07/2026,
+    # 11 201 trades) avec la regle DECLAREE de ce fichier, appliquee a la lettre et en ESPERANCE (PnL moyen par trade) :
+    # BUY si buy_avg > sell_avg + 0.15 et buy_avg > 0 ; SELL si l'inverse ; DUAL_LOSE si les deux moyennes <= 0 ;
+    # WEAK sinon ; heures < 15 trades omises. Corrige notamment XAU H20 (ancienne table : SELL +25 $/trade alors que
+    # les vraies ventes de cette heure perdent -25,5 $/trade). Les remplacements « 08/08 » d'un autre compte (non
+    # tracables dans le depot) sont retires. RAPPEL labo : aucune regle horaire n'a d'avantage hors echantillon ;
+    # cette table ne doit servir qu'a moduler un lot, jamais a imposer un sens.
+    # Garde-fou ajoute : le cote choisi doit avoir >= 10 trades a lui seul, sinon WEAK.
     "XAUUSD": {
-        0: ("SELL", 2, 1, 2, 24),
-        2: ("SELL", 2.32, -0.67, 1.65, 53),
-        3: ("SELL", 0.62, 1.03, 1.65, 20),
-        5: ("SELL", 1, 2, 1, 90),
-        6: ("SELL", 1, 1, 1, 84),
-        7: ("WEAK", 0, 1, 0, 97),
-        8: ("SELL", 3.96, -2.40, 1.56, 83),
-        9: ("WEAK", 0.06, 0.78, 0.84, 79),
-        10: ("BUY", 1.32, 0.89, -0.44, 66),
-        11: ("BUY", 1.02, 0.90, -0.12, 80),
-        12: ("BUY", 0.67, 0.21, -0.46, 180),
-        13: ("SELL", 3.98, -2.80, 1.18, 134),
-        14: ("DUAL_LOSE", 1.92, -1.44, -3.37, 89),
-        15: ("BUY", 11.11, 0.49, -10.62, 34),
-        16: ("SELL", 1, 8, 1, 126),
-        17: ("SELL", 1, 1, 1, 104),
-        18: ("SELL", 1.55, -0.85, 0.70, 27),
-        19: ("BUY", 1, 1, 1, 39),
-        20: ("SELL", 25, 1, 25, 20),
-        22: ("WEAK", 0.09, 0.86, 0.77, 21),
-        23: ("SELL", 2, 2, 2, 80),
+        0: ("SELL", 0.95, 0.7, 1.65, 24),
+        1: ("WEAK", 0.43, 0.52, 0.94, 16),
+        2: ("WEAK", 2.35, -1.51, 0.84, 20),
+        5: ("SELL", 3.68, -2.21, 1.47, 90),
+        6: ("SELL", 2.32, -1.5, 0.83, 84),
+        7: ("BUY", 0.89, 0.67, -0.22, 97),
+        8: ("BUY", 3.0, 0.69, -2.31, 119),
+        9: ("BUY", 2.69, 0.23, -2.46, 217),
+        10: ("SELL", 2.48, -1.55, 0.93, 174),
+        11: ("DUAL_LOSE", 1.81, -0.38, -2.2, 204),
+        12: ("BUY", 1.3, 0.8, -0.5, 246),
+        13: ("BUY", 0.7, 1.03, 0.34, 153),
+        14: ("DUAL_LOSE", 8.96, -8.47, -17.43, 41),
+        15: ("SELL", 0.95, -0.64, 0.3, 39),
+        16: ("SELL", 8.53, -7.78, 0.75, 126),
+        17: ("SELL", 2.06, -1.05, 1.02, 104),
+        18: ("SELL", 0.64, 0.0, 0.64, 220),
+        19: ("WEAK", 0.16, 0.61, 0.77, 39),
+        20: ("WEAK", 26.07, 0.58, -25.48, 20),
+        22: ("BUY", 2.29, 0.43, -1.86, 31),
+        23: ("SELL", 3.27, -1.62, 1.65, 80),
     },
     "XAGUSD": {
-        2: ("BUY", 0, 0, 4, 31),
-        3: ("SELL", 0, 1, 0, 21),
-        5: ("SELL", 0.60, -0.29, 0.31, 65),   # [FIX-STATS-08/08] démo(n=65) + 10y d'accord sur SELL
-        9: ("SELL", 8, 1, 8, 21),
-        10: ("SELL", 1, 1, 1, 75),
-        11: ("WEAK", 0, 1, 2, 54),
-        12: ("DUAL_LOSE", 0, 0, 13, 41),
-        13: ("SELL", 7, 1, 7, 31),
-        19: ("BUY", 4, 4, 46, 22),
-        20: ("SELL", 0.51, -0.18, 0.33, 45),  # [FIX-STATS-08/08] démo(n=45) + 10y d'accord sur SELL
-        22: ("SELL", 2, 5, 2, 27),
-        23: ("DUAL_LOSE", 0, 3, 8, 26),
+        0: ("WEAK", 0.1, 1.09, 0.99, 15),
+        2: ("DUAL_LOSE", 3.79, -0.35, -4.14, 31),
+        3: ("WEAK", 0.37, 0.68, 0.31, 21),
+        9: ("WEAK", 8.24, 0.66, -7.58, 21),
+        10: ("SELL", 2.47, -1.38, 1.09, 75),
+        11: ("SELL", 1.66, 0.65, 2.31, 54),
+        12: ("DUAL_LOSE", 12.16, -0.43, -12.59, 41),
+        13: ("SELL", 5.58, 1.41, 6.99, 31),
+        15: ("WEAK", 9.96, 0.86, -9.1, 15),
+        19: ("BUY", 49.76, 3.77, -45.99, 22),
+        22: ("DUAL_LOSE", 2.31, -4.55, -2.24, 27),
+        23: ("DUAL_LOSE", 5.66, -2.81, -8.47, 26),
     },
-    # [FIX-STATS-08/08] Même méthode/source que XAUUSD ci-dessus.
     "BTCUSD": {
-        0: ("DUAL_LOSE", 2.06, -0.99, -3.05, 54),
-        1: ("SELL", 0.81, -0.19, 0.62, 61),
-        2: ("SELL", 0.47, 0.08, 0.55, 55),
-        3: ("WEAK", 0.03, 0.23, 0.19, 73),
-        4: ("SELL", 0.26, 0.35, 0.61, 88),
-        5: ("SELL", 0.60, 0.47, 1.07, 70),
-        6: ("SELL", 0.48, 0.15, 0.63, 97),
-        7: ("SELL", 1.51, -1.06, 0.45, 172),
-        8: ("DUAL_LOSE", 0.23, -0.68, -0.46, 263),
-        9: ("BUY", 0.36, 0.35, -0.02, 170),
-        10: ("WEAK", 0.14, 0.07, -0.07, 149),
-        11: ("DUAL_LOSE", 0.60, -0.22, -0.83, 177),
-        12: ("DUAL_LOSE", 0.85, -0.29, -1.14, 307),
-        13: ("BUY", 0.90, 0.11, -0.79, 345),  # [FIX-STATS-08/08] TRIPLE confirmation : démo(n=54) + 10y + réel(n=?) s'accordent tous les 3 sur BUY
-        14: ("BUY", 0.57, 0.07, -0.50, 268),
-        15: ("SELL", 0.84, -0.36, 0.48, 185),
-        16: ("BUY", 1.30, 0.44, -0.86, 163),
-        17: ("WEAK", 0.07, 0.47, 0.55, 87),
-        18: ("BUY", 1.10, 0.68, -0.42, 213),
-        19: ("BUY", 1.45, 0.84, -0.62, 252),
-        20: ("DUAL_LOSE", 1.72, -0.22, -1.93, 121),
-        21: ("BUY", 3.07, 0.67, -2.40, 219),  # [CONFIRMÉ EXTERNE] QuantPedia + ScienceDirect : rendements BTC significativement + élevés 21h-23h UTC (tous grands marchés fermés)
-        22: ("BUY", 6.75, 1.69, -5.06, 144),  # [CONFIRMÉ EXTERNE] idem — stratégie académique backtestée "achat 21h/vente 23h UTC" ≈33%/an, vol. plus faible
-        23: ("BUY", 1.69, 0.32, -1.37, 77),   # [CONFIRMÉ EXTERNE] idem
+        0: ("SELL", 0.86, -0.75, 0.11, 101),
+        1: ("SELL", 0.28, 0.3, 0.58, 101),
+        2: ("SELL", 0.55, 0.43, 0.99, 116),
+        3: ("SELL", 0.38, 0.21, 0.6, 117),
+        4: ("SELL", 1.21, -0.84, 0.37, 225),
+        5: ("DUAL_LOSE", 0.25, -0.66, -0.41, 278),
+        6: ("BUY", 0.3, 0.12, -0.17, 205),
+        7: ("WEAK", 0.13, 0.09, -0.04, 159),
+        8: ("DUAL_LOSE", 0.46, -0.23, -0.69, 187),
+        9: ("DUAL_LOSE", 0.61, -0.38, -0.99, 336),
+        10: ("BUY", 0.73, 0.22, -0.51, 429),
+        11: ("DUAL_LOSE", 0.06, -0.4, -0.34, 351),
+        12: ("SELL", 0.24, 0.02, 0.26, 283),
+        13: ("BUY", 1.68, 0.49, -1.19, 245),
+        14: ("WEAK", 0.05, 0.48, 0.53, 147),
+        15: ("BUY", 0.77, 0.54, -0.23, 279),
+        16: ("BUY", 2.6, 0.68, -1.92, 318),
+        17: ("DUAL_LOSE", 1.29, -0.1, -1.39, 167),
+        18: ("BUY", 2.13, 0.37, -1.75, 301),
+        19: ("BUY", 5.71, 1.35, -4.36, 168),
+        20: ("BUY", 1.79, 0.45, -1.33, 84),
+        21: ("DUAL_LOSE", 0.99, -0.88, -1.87, 66),
+        22: ("SELL", 0.98, -0.18, 0.8, 77),
+        23: ("SELL", 0.18, 0.08, 0.25, 128),
     },
     "EURUSD": {
-        0: ("SELL", 0, 0, 0, 27),
-        7: ("SELL", 0, 1, 0, 26),
-        10: ("SELL", 0, 0, 0, 113),
-        11: ("SELL", 0, 0, 0, 98),
-        12: ("SELL", 0, 1, 0, 54),
-        13: ("SELL", 1, 0, 1, 193),
-        14: ("SELL", 0, 0, 0, 39),
-        15: ("SELL", 0, 0, 0, 52),
-        20: ("BUY", 0, 0, 1, 41),
-        21: ("BUY", 0, 0, 0, 142),
-        22: ("BUY", 0, 0, 0, 83),
-        23: ("WEAK", 0, 0, 0, 43),
+        0: ("WEAK", 0.11, 0.0, 0.11, 27),
+        7: ("SELL", 0.87, -0.71, 0.16, 26),
+        10: ("WEAK", 0.04, 0.0, 0.04, 113),
+        11: ("SELL", 0.4, -0.37, 0.03, 98),
+        12: ("SELL", 1.43, -1.38, 0.05, 54),
+        13: ("DUAL_LOSE", 0.58, -0.24, -0.81, 193),
+        14: ("WEAK", 0.1, -0.07, 0.04, 39),
+        15: ("WEAK", 0.31, 0.03, -0.28, 52),
+        20: ("BUY", 0.62, 0.04, -0.58, 41),
+        21: ("BUY", 0.31, 0.03, -0.27, 142),
+        22: ("BUY", 0.33, 0.35, 0.02, 83),
+        23: ("WEAK", 0.06, 0.05, 0.12, 43),
     },
     "GBPUSD": {
-        9: ("SELL", 0.71, -0.31, 0.40, 2380),  # [FIX-STATS-08/08] démo(n=2380, très gros échantillon) + 10y d'accord sur SELL
-        11: ("BUY", 1, 1, 0, 22),
-        14: ("SELL", 0, 0, 0, 16),
-        15: ("SELL", 0, 0, 0, 23),
-        16: ("SELL", 0, 0, 0, 27),
-        17: ("SELL", 0, 0, 0, 37),
-        21: ("SELL", 0, 0, 0, 16),
+        11: ("WEAK", 0.92, -0.81, 0.11, 22),
+        12: ("WEAK", 0.99, -0.85, 0.14, 16),
+        14: ("WEAK", 0.14, 0.17, 0.03, 16),
+        15: ("WEAK", 0.06, 0.0, 0.06, 23),
+        16: ("WEAK", 0.04, 0.0, 0.04, 27),
+        17: ("DUAL_LOSE", 0.19, 0.0, -0.19, 37),
+        21: ("DUAL_LOSE", 0.09, 0.0, -0.09, 16),
     },
     "USDJPY": {
-        2: ("BUY", 0, 0, 3, 22),
-        5: ("SELL", 0, 0, 0, 156),
-        6: ("BUY", 0, 0, 0, 70),
-        7: ("WEAK", 0, 0, 0, 193),
-        9: ("SELL", 0, 0, 0, 20),
-        10: ("BUY", 0, 0, 0, 291),
-        11: ("BUY", 0, 0, 2, 67),
-        12: ("WEAK", 0, 0, 0, 92),
-        14: ("SELL", 0, 0, 0, 15),
-        15: ("SELL", 0, 0, 0, 53),
-        17: ("SELL", 0, 0, 0, 29),
-        21: ("WEAK", 0, 0, 0, 37),
-        22: ("WEAK", 0, 0, 0, 195),
-        23: ("WEAK", 0, 0, 0, 111),
+        2: ("BUY", 3.05, 0.02, -3.03, 22),
+        5: ("WEAK", 0.13, -0.08, 0.05, 156),
+        6: ("WEAK", 0.01, 0.03, 0.03, 70),
+        7: ("WEAK", 0.01, 0.06, 0.06, 193),
+        9: ("SELL", 0.22, -0.18, 0.04, 20),
+        10: ("BUY", 0.45, 0.03, -0.42, 291),
+        11: ("DUAL_LOSE", 1.74, -0.03, -1.77, 67),
+        12: ("WEAK", 0.04, 0.04, -0.0, 92),
+        14: ("DUAL_LOSE", 0.16, 0.0, -0.16, 15),
+        15: ("SELL", 0.45, -0.39, 0.06, 53),
+        17: ("WEAK", 0.01, 0.02, 0.01, 29),
+        21: ("SELL", 0.22, -0.12, 0.1, 37),
+        22: ("WEAK", 0.02, 0.08, 0.06, 195),
+        23: ("WEAK", 0.06, -0.03, 0.03, 111),
     },
     "USDCHF": {
-        8: ("SELL", 0.55, -0.15, 0.40, 44),  # [FIX-STATS-08/08] démo(n=44) + 10y d'accord sur SELL
-        15: ("SELL", 0, 0, 0, 21),
-        16: ("SELL", 0, 0, 0, 30),
-        17: ("SELL", 0, 0, 0, 23),
-        18: ("SELL", 0, 0, 0, 22),
+        15: ("DUAL_LOSE", 0.18, -0.03, -0.21, 21),
+        16: ("WEAK", 0.04, -0.0, 0.04, 30),
+        17: ("DUAL_LOSE", 0.41, 0.0, -0.41, 23),
+        18: ("WEAK", 0.19, 0.25, 0.06, 22),
     },
     "AUDUSD": {
-        1: ("BUY", 0.44, 0.30, -0.14, 103),   # [FIX-STATS-08/08] démo(n=103) + 10y d'accord sur BUY
-        2: ("SELL", 0, 1, 0, 97),
-        9: ("SELL", 0.38, -0.05, 0.33, 56),   # [FIX-STATS-08/08] démo(n=56) + 10y d'accord sur SELL
-        13: ("SELL", 0, 1, 0, 432),
-        15: ("SELL", 0, 0, 0, 48),
-        16: ("SELL", 0.29, -0.02, 0.27, 193), # [FIX-STATS-08/08] démo(n=193) + 10y d'accord sur SELL
-        17: ("SELL", 1, 2, 1, 221),
-        18: ("SELL", 1, 0, 1, 24),
+        2: ("SELL", 0.69, -0.66, 0.03, 97),
+        13: ("SELL", 1.38, -1.19, 0.19, 432),
+        15: ("DUAL_LOSE", 0.25, 0.0, -0.25, 48),
+        17: ("SELL", 3.4, -1.94, 1.46, 221),
+        18: ("SELL", 0.51, 0.0, 0.51, 24),
     },
 }
 
@@ -222,7 +202,12 @@ MICRO_STRONG_THRESHOLD = 0.6   # |micro_score| au-delà duquel la micro a le der
 
 
 def _normalize(sym: str) -> str:
-    return sym.upper().replace("M","").strip()
+    # [FIX-A7] avant : replace("M","") supprimait TOUS les M (USDMXN→USDXN, MSFT→SFT). On retire seulement un suffixe broker.
+    s = sym.upper().strip()
+    for suf in (".M", "M", ".PRO", ".RAW", ".A", "."):
+        if s.endswith(suf) and len(s) - len(suf) >= 6:
+            return s[: -len(suf)]
+    return s
 
 
 # ──────────────────────────────────────────────────────────────────────────────

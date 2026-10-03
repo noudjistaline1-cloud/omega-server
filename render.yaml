@@ -1,4 +1,5 @@
 services:
+  # Un SEUL service web gratuit : le serveur + le world_scanner dans le même processus (Render Free n'a pas de worker).
   - type: web
     name: omega-titan-server
     env: python
@@ -15,22 +16,31 @@ services:
         value: "3.11.0"
       - key: OMEGA_SERVER_URL
         value: https://omega-server-90mu.onrender.com
- 
-  - type: worker
-    name: world-scanner
-    env: python
-    region: frankfurt
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python world_scanner.py
-    envVars:
-      - key: PYTHON_VERSION
-        value: "3.11.0"
-      - key: PYTHONUNBUFFERED
-        value: "1"
-      - key: OMEGA_SERVER_URL
-        value: https://omega-server-90mu.onrender.com
-      - key: STALINE_API_KEY
-        value: STALINE-ULTRA-KEY-2025
+      - key: OMEGA_FORCE_CLOSE_ENABLED
+        value: "false"
+      - key: RUN_WORLD_SCANNER_IN_WEB
+        value: "true"
       - key: PUSH_INTERVAL_SEC
         value: "30"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+  # Option PAYANTE (plan Starter) : worker séparé. Si vous l'activez, mettez RUN_WORLD_SCANNER_IN_WEB à "false" ci-dessus.
+  # - type: worker
+  #   name: world-scanner
+  #   env: python
+  #   region: frankfurt
+  #   plan: starter
+  #   buildCommand: pip install -r requirements.txt
+  #   startCommand: python world_scanner.py
+  #   envVars:
+  #     - key: PYTHON_VERSION
+  #       value: "3.11.0"
+  #     - key: PYTHONUNBUFFERED
+  #       value: "1"
+  #     - key: OMEGA_SERVER_URL
+  #       value: https://omega-server-90mu.onrender.com
+  #     - key: STALINE_API_KEY
+  #       value: STALINE-ULTRA-KEY-2025
+  #     - key: PUSH_INTERVAL_SEC
+  #       value: "30"

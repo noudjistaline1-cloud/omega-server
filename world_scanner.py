@@ -125,9 +125,9 @@ VIX_STRESS   = 22.0
 
 # Calendrier FOMC 2026 (dates de décision officielle UTC)
 FOMC_DATES_2026 = [
-    "2026-01-28", "2026-03-18", "2026-05-06",
-    "2026-06-17", "2026-07-28", "2026-09-16",
-    "2026-11-04", "2026-12-16",
+    "2026-01-28", "2026-03-18", "2026-04-29",
+    "2026-06-17", "2026-07-29", "2026-09-16",
+    "2026-10-28", "2026-12-09",   # [FIX-C9] calendrier officiel Fed 2026 (même liste que fetch_fomc_calendar)
 ]
 
 def _get_fred_ttl() -> int:
@@ -1021,13 +1021,12 @@ async def fetch_forexfactory_events(session: aiohttp.ClientSession) -> List[Dict
                             continue
                         ev_time_str = ev.get("date", "")
                         ev_time     = None
-                        for fmt in ["%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%S"]:
-                            try:
-                                ev_time = datetime.strptime(ev_time_str[:19], fmt.replace("%z", ""))
-                                ev_time = ev_time.replace(tzinfo=timezone.utc)
-                                break
-                            except Exception:
-                                pass
+                        try:   # [FIX-A10] la date FF porte son décalage (-04:00) : conversion réelle en UTC
+                            ev_time = datetime.fromisoformat(ev_time_str)
+                            ev_time = (ev_time.replace(tzinfo=timezone.utc) if ev_time.tzinfo is None
+                                       else ev_time.astimezone(timezone.utc))
+                        except Exception:
+                            ev_time = None
                         if ev_time and now <= ev_time <= window:
                             result.append({
                                 "title":    ev.get("title", ""),
@@ -1783,7 +1782,7 @@ async def fetch_cot_report(session: aiohttp.ClientSession, cftc_code: str = "088
     result = {"net_position_pct": 0.0, "managed_money_net": 0, "ok": False, "source": "fallback"}
     try:
         # Dataset Socrata "Legacy COT" — futures only, triée par date desc
-        url = (f"https://publicreporting.cftc.gov/resource/6dca-aqww.json"
+        url = (f"https://publicreporting.cftc.gov/resource/72hh-3qpy.json"  # [FIX-A15] dataset Disaggregated (les champs m_money_* n'existent pas dans le Legacy 6dca-aqww) — vérifié le 03/10/2026
                f"?cftc_contract_market_code={cftc_code}&$order=report_date_as_yyyy_mm_dd DESC&$limit=1")
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as r:
             if r.status == 200:
@@ -1793,6 +1792,8 @@ async def fetch_cot_report(session: aiohttp.ClientSession, cftc_code: str = "088
                     long_mm  = float(row.get("m_money_positions_long_all", 0) or 0)
                     short_mm = float(row.get("m_money_positions_short_all", 0) or 0)
                     total = long_mm + short_mm
+                    if total <= 0:
+                        return result   # [FIX-A15] pas de faux ok=True avec des zéros
                     net_pct = ((long_mm - short_mm) / total) if total > 0 else 0.0
                     result = {
                         "net_position_pct": round(net_pct, 3),
@@ -2789,8 +2790,9 @@ def score_news(headlines: List[Dict], profile: Dict, geo_pol_dynamic: str = None
 
     # Ajustement géopolitique dynamique
     if geo_pol == "bull" and typ == "metal":
-        if bear_s > bull_s:
-            score = abs(score) * 0.9  # Guerre = BUY or
+        # [FIX-B5] avant : un score baissier (ex. « fed hawkish, dollar surge ») était retourné en haussier
+        # (abs(score)) → news métaux toujours ≥ 0. Désormais : prime refuge bornée, le signe des titres est respecté.
+        score = min(1.0, score + 0.10)
     elif geo_pol == "bull" and typ in ("crypto", "index"):
         score = min(1.0, score + 0.10)
     elif geo_pol == "bear" and typ in ("crypto", "index"):
@@ -3402,7 +3404,7 @@ def build_direction_scorecard(
                 else "index" if any(x in _sym_up for x in ["US30","US100","US500"])
                 else "forex")
     _atr_map = {"crypto": 150.0, "metal": 4.0, "forex": 0.0008, "index": 25.0}
-    _atr_e   = round(_atr_map.get(_atype, 0.001) * max(1.0, float(vix_val or 18) / 18.0), 5)
+    _atr_e   = round(_atr_map.get(_atype, 0.001) * max(1.0, float(macro.get("vix", 18) or 18) / 18.0), 5)
     _tp      = float(tech_data.get("price", 0)) if tech_data.get("ok") else 0.0
     if direction == "SELL" and _tp > 0:
         _gl1 = round(_tp + _atr_e * 0.5, 5)
@@ -3413,7 +3415,7 @@ def build_direction_scorecard(
     else:
         _gl1 = _gl2 = 0.0
 
-        return {
+    return {   # [FIX-A2] était indenté dans le else : scorecard None pour BUY/SELL
         "symbole":        sym,
         "direction":      direction,
         "emoji":          emoji,
@@ -3466,10 +3468,10 @@ def compute_asset_state(
     # pour la pondération adaptative ci-dessous et pour le suivi de
     # performance par régime (record_pending_scores, plus bas).
     _tech_data_early = _raw_cache.get("technicals", {}).get(sym, {})
-    regime = classify_regime(_tech_data_early, vix) if _tech_data_early.get("ok") else "UNKNOWN"
+    mkt_regime = classify_regime(_tech_data_early, vix) if _tech_data_early.get("ok") else "UNKNOWN"   # [FIX-A11] ne plus écraser `regime` (NORMAL/HIGH/CRITICAL)
 
     # [WS-FIX6] Poids adaptatifs par actif + performance récente par source
-    w = compute_weights_adaptive(vix, typ, urgency, symbol=sym, regime=regime)
+    w = compute_weights_adaptive(vix, typ, urgency, symbol=sym, regime=mkt_regime)
 
     # [FIX-2] Score news avec geo_pol dynamique
     news_sc, triggers = score_news(headlines, profile, geo_pol_dynamic)
@@ -3576,6 +3578,8 @@ def compute_asset_state(
         # Spring = faux breakdown suivi d'une reprise → signal haussier fort,
         # même détecté pendant une phase encore classée DISTRIBUTION.
         _wyck_score = 0.25
+    elif _wyck_data.get("upthrust"):
+        _wyck_score = -0.25   # [FIX-A20] upthrust = faux breakout haussier → signal baissier
     _wyck_score *= float(_wyck_data.get("confidence", 0.0) or 0.0)
 
     # [MICRO-1] Amihud illiquidity — pénalité de CONVICTION pure (jamais
@@ -3635,11 +3639,13 @@ def compute_asset_state(
     _she_conf = 0.0
     if _SHE_AVAILABLE:
         try:
-            _she_result = smart_hour_decision(sym, hour_utc, macro={
+            _she_req = 1 if final >= 0 else -1   # [FIX-B3] l'argument `direction` manquait → TypeError avalé
+            _she_result = smart_hour_decision(sym, hour_utc, _she_req, macro={
                 "dxy": float(macro.get("dxy", 101)),
                 "vix": float(macro.get("vix", 18)),
             })
-            _she_dir  = _she_result.get("direction")   # "BUY"/"SELL"/"WAIT"
+            _fd = _she_result.get("final_direction", 0)
+            _she_dir  = "BUY" if _fd == 1 else ("SELL" if _fd == -1 else None)
             _she_conf = float(_she_result.get("confidence", 0.0))
             _she_note = _she_result.get("note", "")
         except Exception as _she_e:
@@ -3709,10 +3715,8 @@ def compute_asset_state(
             # Contradiction forte → réduire conviction
             if _she_conf >= 0.70:
                 conviction = round(max(0.10, conviction * 0.70), 2)
-        elif _she_numeric != 0 and direction in ("NEUTRAL","RESPIRATION") and _she_conf >= 0.65:
-            # Scanner neutre mais SHE fort → adopter la direction SHE
-            direction = _she_dir
-            conviction = round(_she_conf * 0.75, 2)
+        # [FIX-B3] branche « scanner neutre → adopter la direction SHE » retirée : le temps est un bonus de
+        # conviction, jamais un déclencheur (règle T83) ; labo 2024-2026 : règles horaires SHE à espérance < 0 hors échantillon.
 
 
     # [V125-PRECISION-3] Divergence RSI majeure → traduction en BUY/SELL fort,
@@ -3882,7 +3886,7 @@ def compute_asset_state(
     # avec le régime détecté en début de fonction et la conviction finale
     # comme confidence pour la calibration par buckets (plus haut).
     record_pending_scores(sym, typ, _price_now, _pending_scores_dict,
-                          regime=regime, confidence=conviction)
+                          regime=mkt_regime, confidence=conviction)
 
     return AssetState(
         symbol            = sym,
@@ -3919,7 +3923,7 @@ def compute_asset_state(
             # classify_regime / calibrate_confidence_guarded plus haut dans
             # le fichier) — purement informatif en plus des champs
             # existants, rien ci-dessus n'est modifié.
-            "regime":               regime,
+            "regime":               mkt_regime,
             "calibration":          calibrate_confidence_guarded(typ, conviction),
             "drift_alert_sources":  [s for s in ("news","etf","fg","macro","tech","session")
                                      if is_drifting(typ, s)],
@@ -4039,7 +4043,7 @@ async def fetch_gdelt(session: aiohttp.ClientSession) -> Dict:
                         "RISK_ON"  if score >  0.15 else
                         "NEUTRAL"
                     )
-                    result["ok"]     = True
+                    result["ok"]     = bool(tones or goldsteins)   # [FIX-A16] artlist sans tone/goldstein → pas de faux ok
                     result["source"] = "gdelt"
     except Exception:
         pass
@@ -4053,8 +4057,8 @@ async def fetch_gdelt(session: aiohttp.ClientSession) -> Dict:
             async with session.get(url2, timeout=aiohttp.ClientTimeout(total=8),
                                    headers=H_BROWSER) as r:
                 if r.status == 200:
-                    result["ok"]     = True
-                    result["source"] = "gdelt_tv"
+                    # [FIX-A16] le repli TV ne fournit ni goldstein ni tone : ne plus déclarer ok=True sans donnée
+                    result["source"] = "gdelt_tv_sans_donnees"
         except Exception:
             pass
 
@@ -4215,8 +4219,8 @@ async def fetch_pmi_ism(session: aiohttp.ClientSession) -> Dict:
     result["pmi_signal"] = (
         "EXPANSION_STRONG" if comp > 55 else
         "EXPANSION"        if comp > 52 else
+        "CONTRACTION_STRONG" if comp < 45 else   # [FIX-A35] testé avant CONTRACTION
         "CONTRACTION"      if comp < 48 else
-        "CONTRACTION_STRONG" if comp < 45 else
         "NEUTRAL"
     )
     return result
@@ -4350,8 +4354,8 @@ def enrich_geo_pol_with_advanced(geo_pol_map: Dict,
     signal = (
         "RISK_OFF_STRONG" if total < -0.20 else
         "RISK_OFF"        if total < -0.08 else
+        "RISK_ON_STRONG"  if total >  0.20 else   # [FIX-A35] testé avant RISK_ON
         "RISK_ON"         if total >  0.08 else
-        "RISK_ON_STRONG"  if total >  0.20 else
         "NEUTRAL"
     )
 
@@ -4856,6 +4860,7 @@ async def fetch_wyckoff_phases(session: aiohttp.ClientSession,
         phase = "RANGING"
         conf  = 0.5
         spring = False
+        upthrust = False
 
         if preceded_drop and lower_dom:
             phase = "ACCUMULATION"; conf = 0.65
@@ -4866,11 +4871,12 @@ async def fetch_wyckoff_phases(session: aiohttp.ClientSession,
             phase = "DISTRIBUTION"; conf = 0.65
             # Upthrust : dernière bougie casse au-dessus rh puis revient
             if highs[-1] > rh + atr*0.1 and closes[-1] < rh:
-                spring = True; conf = 0.80
+                upthrust = True; conf = 0.80   # [FIX-A20] un upthrust est BAISSIER (était codé spring=True → +0.25)
 
         result[sym] = {
             "phase":      phase,
             "spring":     spring,
+            "upthrust":   upthrust,
             "confidence": round(conf, 2),
             "range_high": round(rh, 5),
             "range_low":  round(rl, 5),
@@ -4922,6 +4928,10 @@ async def fetch_rolling_correlations(session: aiohttp.ClientSession) -> Dict:
         n = min(len(a), len(b))
         if n < 5: return 0.0
         a, b = a[-n:], b[-n:]
+        # [FIX-A22] corrélation des RENDEMENTS (les niveaux de prix donnent des corrélations factices)
+        a = [(a[i]/a[i-1]-1.0) if a[i-1] else 0.0 for i in range(1, n)]
+        b = [(b[i]/b[i-1]-1.0) if b[i-1] else 0.0 for i in range(1, n)]
+        n = n - 1
         ma = sum(a)/n; mb = sum(b)/n
         num = sum((a[i]-ma)*(b[i]-mb) for i in range(n))
         da  = (sum((x-ma)**2 for x in a))**0.5
@@ -5009,8 +5019,12 @@ async def fetch_liquidations(session: aiohttp.ClientSession) -> Dict:
                                    if t.get("side")=="Buy"  and float(t.get("size",0))>5)
                     big_sell = sum(float(t.get("size",0)) for t in trades
                                    if t.get("side")=="Sell" and float(t.get("size",0))>5)
-                    result["btc_liq_long_usd"]  = round(big_sell * 62000, 0)  # SELL gros = liq longs
-                    result["btc_liq_short_usd"] = round(big_buy  * 62000, 0)  # BUY gros = liq shorts
+                    _px = 0.0   # [FIX-A23] prix BTC réel (était figé à 62 000 $)
+                    try: _px = float(trades[0].get("price", 0) or 0)
+                    except Exception: _px = 0.0
+                    if _px <= 0: _px = float((_raw_cache.get("binance", {}) or {}).get("btc_price", 0) or 0) or 62000.0
+                    result["btc_liq_long_usd"]  = round(big_sell * _px, 0)  # SELL gros = liq longs
+                    result["btc_liq_short_usd"] = round(big_buy  * _px, 0)  # BUY gros = liq shorts
 
                     total_liq = result["btc_liq_long_usd"] + result["btc_liq_short_usd"]
                     cascade = total_liq > 5_000_000  # > 5M$ = cascade
@@ -5268,7 +5282,7 @@ BTC_HOURLY_STATS = {
     23: {"bias": +0.110, "vol_mult": 0.78, "wr_buy": 0.575, "regime": "BULL_WINDOW",  "note": "2e meilleure heure — marchés traditionnels tous fermés, crypto seul"},
 }
 
-def _is_cme_last_friday_expiry(today: "date") -> bool:
+def _is_cme_last_friday_expiry(today) -> bool:
     """Retourne True si aujourd'hui est le dernier vendredi du mois (CME monthly expiry)."""
     import calendar
     if today.weekday() != 4:  # 4 = vendredi
@@ -5445,7 +5459,7 @@ def compute_rsi_divergence(closes: list, rsi_period: int = 14) -> Dict:
 
     # Calcul RSI série complète
     def calc_rsi_series(cls, period):
-        gains = losses = []
+        gains, losses = [], []   # [FIX-B4] « gains = losses = [] » pointait sur la même liste → RSI 50 constant
         rsis = []
         for i in range(1, len(cls)):
             d = cls[i] - cls[i-1]
