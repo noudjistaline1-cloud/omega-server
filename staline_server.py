@@ -3895,13 +3895,18 @@ def _refresh_news():
                                             return
                         except Exception as _fe:
                             logger.debug("[AI-6-ALT] Finnhub fallback échec: %s", _fe)
-                        # Si tout échoue: conserver le cache existant
-                        with _news_lock:
-                            _news_cache["fetched_at"] = time()  # reset timer anti-retry 6h
-                        logger.warning("[AI-6] Toutes sources épuisées — cache conservé 6h")
-                        return
+                        # [FIX-S10] 429 sur la 1re adresse : on essaie l'adresse suivante (CDN) au lieu d'abandonner
+                        continue
+                    else:
+                        logger.warning("[AI-6] News %s → HTTP %s", url, r.status_code)
             except Exception as e:
                 logger.debug("[AI-6] News fetch failed %s: %s", url, e)
+        # [FIX-S10] toutes les adresses ont échoué : nouvel essai dans 20 min si le cache est VIDE
+        # (avant : blocage 6 h avec 0 événement → module news « dégradé » des heures durant)
+        with _news_lock:
+            empty = not _news_cache.get("events")
+            _news_cache["fetched_at"] = time() - (NEWS_CACHE_TTL - 1200 if empty else 0)
+        logger.warning("[AI-6] Toutes sources épuisées — %s", "nouvel essai dans 20 min" if empty else "cache conservé 6 h")
     finally:
         with _news_lock:
             _news_fetching = False
