@@ -10663,7 +10663,7 @@ def fusion_gate(req, score_result: Dict, macro_data: Dict) -> Dict:
 
 @app.get("/decision/{symbol}")
 def decision_ep(symbol: str, direction: str = "", p_current: float = -1.0, hour_utc: int = -1, weekday: int = -1,
-                price: float = 0.0, authorization: Optional[str] = Header(None)):
+                price: float = 0.0, open: str = "", authorization: Optional[str] = Header(None)):
     """[MM-1.0] DÉCISION FINALE à 3 sources — n'interdit JAMAIS un trade.
     1) marché actuel (p_current envoyé par l'EA, poids 0,70) ; 2) mémoire réelle du marché 2010-2026 (0,20) ;
     3) macro (proxy 5 j validé + World Scanner, 0,10). Retour : direction, p_buy, lot_mult (0,6-1,4), explications."""
@@ -10683,7 +10683,7 @@ def decision_ep(symbol: str, direction: str = "", p_current: float = -1.0, hour_
     try:
         return _MM.decide(symbol, direction or None, None if p_current < 0 else p_current,
                           None if hour_utc < 0 else hour_utc, None if weekday < 0 else weekday, ws,
-                          None, price if price > 0 else None)
+                          None, price if price > 0 else None, open or None)
     except Exception as e:
         return {"symbol": symbol, "action": "TRADE", "blocked": False, "direction": (direction or "NEUTRAL").upper(),
                 "lot_mult": 1.0, "error": str(e)[:200]}

@@ -29,3 +29,14 @@ def test_rollover_hour_neutral_for_fx():
 def test_hist_score_for():
     r = M.hist_score_for("XAUUSD", "BUY", 14, 2)
     assert r and 0.3 < r["score"] < 0.7 and r["n"] > 1000
+
+def test_correlations():
+    r = M.decide("BTCUSDm", "BUY", 0.65, 14, 2, None, 0.0, None, "ETHUSDm:BUY")
+    assert r["decision_4_correlations"]["btc_eth_confirmed"] is True and r["decision_4_correlations"]["corr_mult"] == 1.5
+    r = M.decide("BTCUSD", "BUY", 0.65, 14, 2, None, 0.0, None, "ETHUSD:SELL")
+    assert r["decision_4_correlations"]["corr_mult"] == 0.75
+    r = M.decide("XAUUSD", "BUY", 0.65, 14, 2, None, 0.0, None, "XAGUSD:BUY,AUDUSD:BUY,NZDUSD:BUY")
+    assert r["decision_4_correlations"]["exposure_same_direction"] >= 1.5 and r["decision_4_correlations"]["corr_mult"] == 0.8
+    assert "corr_XAGUSD" in r and r["action"] == "TRADE"
+    r = M.decide("XAUUSD", "BUY", 0.65, 14, 2, None, 0.0)
+    assert r["decision_4_correlations"]["corr_mult"] == 1.0

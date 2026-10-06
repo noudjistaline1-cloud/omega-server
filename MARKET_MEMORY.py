@@ -132,9 +132,43 @@ def macro_view(symbol: str, ws_macro: Optional[float] = None, proxy_value: Optio
             "proxy": m.get("proxy") if m else None, "detail": parts or ["aucune macro disponible → neutre"]}
 
 
+def correlation_view(symbol: str, trade_dir: int, open_positions: Optional[str] = None) -> Dict[str, Any]:
+    """Corrélations stables 2010-2026 (rendements journaliers). open_positions = "ETHUSD:BUY,XAUUSDm:SELL".
+    Règles : confirmation BTC par ETH (validée) ; exposition corrélée ≥ 1,5 → lot ×0,8 (protection, non prédictive)."""
+    key = canonical(symbol)
+    row = (_MEM.get("assets", {}).get(key or "", {}) or {}).get("correlations", {})
+    mult, notes, expo, eth_same = 1.0, [], 0.0, None
+    pos = []
+    for item in (open_positions or "").split(","):
+        if ":" not in item:
+            continue
+        sy, dd = item.split(":", 1)
+        ck, dv = canonical(sy.strip()), (1 if dd.strip().upper().startswith("B") else -1)
+        if ck and ck != key:
+            pos.append((ck, dv))
+    for ck, dv in pos:
+        c = row.get(ck)
+        if c is None:
+            continue
+        if {key, ck} == {"BTCUSD", "ETHUSD"}:
+            continue                                  # paire validée traitée à part
+        expo += c * dv * trade_dir
+    if key == "BTCUSD" and trade_dir != 0 and open_positions is not None:
+        eth_same = any(ck == "ETHUSD" and dv == trade_dir for ck, dv in pos)
+        mult *= 1.5 if eth_same else 0.75
+        notes.append("BTC confirmé par une position ETH dans le même sens → ×1,5" if eth_same else "BTC seul (ETH pas parti dans ce sens) → ×0,75")
+    if expo >= 1.5:
+        mult *= 0.8
+        notes.append(f"exposition corrélée déjà forte dans ce sens ({expo:+.2f}) → ×0,8")
+    return {"correlated_assets": row, "open_positions_used": [f"{a}:{'BUY' if d > 0 else 'SELL'}" for a, d in pos],
+            "exposure_same_direction": round(expo, 3), "btc_eth_confirmed": eth_same, "corr_mult": round(mult, 3),
+            "notes": notes or ["aucune règle de corrélation déclenchée"]}
+
+
 def decide(symbol: str, direction: Optional[str] = None, p_current: Optional[float] = None,
            hour_utc: Optional[int] = None, weekday: Optional[int] = None, ws_macro: Optional[float] = None,
-           proxy_value: Optional[float] = None, price: Optional[float] = None) -> Dict[str, Any]:
+           proxy_value: Optional[float] = None, price: Optional[float] = None,
+           open_positions: Optional[str] = None) -> Dict[str, Any]:
     """Décision finale à 3 sources. Ne renvoie JAMAIS d'interdiction : seulement sens, probabilité et multiplicateur de lot."""
     now = time.gmtime()
     hour_utc = now.tm_hour if hour_utc is None or hour_utc < 0 else int(hour_utc)
@@ -154,6 +188,9 @@ def decide(symbol: str, direction: Optional[str] = None, p_current: Optional[flo
     mz = mem.get("mem_z_buy", 0.0) if mem.get("available") else 0.0
     cz = mac.get("macro_z_buy", 0.0)
     lot = max(lf["min"], min(lf["max"], 1.0 + lf["k_memory"] * mz * s + lf["k_macro"] * cz * s))
+    cor = correlation_view(symbol, 1 if final_dir == "BUY" else -1, open_positions) if loaded() else {"corr_mult": 1.0, "correlated_assets": {}}
+    lot_base = lot
+    lot = lot * cor["corr_mult"]
     agree_mem = "neutre" if abs(mz) < 0.3 else ("d'accord" if mz * s > 0 else "contre")
     agree_mac = "neutre" if abs(cz) < 0.3 else ("d'accord" if cz * s > 0 else "contre")
     conflict = []
@@ -166,14 +203,17 @@ def decide(symbol: str, direction: Optional[str] = None, p_current: Optional[flo
     out = {
         "symbol": symbol, "memory_symbol": mem.get("symbol"), "action": "TRADE", "blocked": False,
         "direction": final_dir, "p_buy": round(p_final, 4), "p_sell": round(1 - p_final, 4),
-        "confidence": round(abs(p_final - 0.5) * 2, 4), "lot_mult": round(lot, 3),
+        "confidence": round(abs(p_final - 0.5) * 2, 4), "lot_mult": round(lot, 3), "lot_mult_memory_macro": round(lot_base, 3),
         "weights": {"current_market": W_CURRENT, "market_memory": W_MEMORY, "macro": W_MACRO},
         "decision_1_current_market": {"p_buy": round(p_current, 4), "direction_requested": d_in or None},
         "decision_2_market_memory": mem | {"agreement": agree_mem},
         "decision_3_macro": mac | {"agreement": agree_mac},
+        "decision_4_correlations": cor,
         "conflicts": conflict,
         "note": "La mémoire et la macro modulent le lot ; elles n'interdisent jamais un trade.",
     }
+    for k_, v_ in (cor.get("correlated_assets") or {}).items():
+        out["corr_" + k_] = v_                          # clés plates, lisibles par l'EA
     if price and mem.get("amplitude_hour_bp"):
         out["protection_hint"] = {
             "amplitude_hour_price": round(float(price) * float(mem["amplitude_hour_bp"]) / 1e4, 5),
