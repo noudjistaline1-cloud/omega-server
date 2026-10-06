@@ -320,14 +320,15 @@ def _macro_score_for_sym(sym: str, macro: Optional[dict]) -> tuple:
     # Calcul par actif (corrélations institutionnelles connues)
     if "XAU" in sym:
         # Or: corrélé négativement au DXY, positivement au VIX et inflation
-        score = (-dxy_signal * 0.45 +    # DXY fort → XAU baisse
+        # [MM-1.0 FIX-SIGNE] dxy_signal>0 = dollar FAIBLE ; us10y_signal>0 = taux BAS (signes alignés sur les commentaires)
+        score = (dxy_signal * 0.45 +     # DXY fort → XAU baisse
                  -vix_signal * 0.30 +    # VIX haut → XAU monte (risque off)
                  xau_bias   * 0.15 +     # Biais XAU direct depuis serveur
-                 -us10y_signal * 0.10)   # Taux hauts → XAU sous pression
+                 us10y_signal * 0.10)    # Taux hauts → XAU sous pression
         note = f"DXY={dxy:.1f}({-dxy_signal*0.45:+.2f}) VIX={vix:.1f}({-vix_signal*0.30:+.2f})"
 
     elif "XAG" in sym:
-        score = (-dxy_signal * 0.40 +
+        score = (dxy_signal * 0.40 +     # [MM-1.0 FIX-SIGNE] dollar faible → argent monte
                  -vix_signal * 0.25 +
                  sp500_signal * 0.20 +   # Argent = métal industriel aussi
                  xau_bias    * 0.15)
@@ -344,7 +345,7 @@ def _macro_score_for_sym(sym: str, macro: Optional[dict]) -> tuple:
     elif "JPY" in sym:
         if sym.startswith("USD"):
             # USDJPY: DXY fort → BUY, VIX haut → SELL (JPY safe haven)
-            score = (dxy_signal  * 0.50 +
+            score = (-dxy_signal * 0.50 +   # [MM-1.0 FIX-SIGNE] DXY fort → USDJPY monte
                      -vix_signal * 0.30 +   # VIX haut → JPY s'apprécie → USDJPY baisse
                      -fg_signal  * 0.20)
         else:  # GBPJPY etc
@@ -355,21 +356,22 @@ def _macro_score_for_sym(sym: str, macro: Optional[dict]) -> tuple:
 
     elif sym.startswith("EUR"):
         # EURUSD: DXY faible → EUR monte
-        score = (-dxy_signal  * 0.55 +
+        score = (dxy_signal   * 0.55 +   # [MM-1.0 FIX-SIGNE] dollar faible → EUR monte
                  sp500_signal * 0.20 +
                  fg_signal    * 0.15 +
-                 -us10y_signal * 0.10)
+                 us10y_signal * 0.10)     # taux US bas → EUR monte
         note = f"DXY={dxy:.1f}({-dxy_signal*0.55:+.2f})"
 
     elif sym.startswith("AUD") or sym.startswith("NZD"):
         # Aussie/Kiwi: risk on currencies
         score = (sp500_signal * 0.40 +
                  fg_signal    * 0.30 +
-                 -dxy_signal  * 0.30)
+                 dxy_signal   * 0.30)     # [MM-1.0 FIX-SIGNE] dollar faible → AUD/NZD montent
         note = f"SP500={sp500_ret:+.1f}% FG={fg}"
 
     elif sym.startswith("GBP") or sym.startswith("CHF") or sym.startswith("USD"):
-        score = (-dxy_signal * 0.50 +
+        _usd_base = sym.startswith("USD")   # [MM-1.0 FIX-SIGNE] USDxxx monte quand le dollar est fort ; GBPUSD l'inverse
+        score = ((-dxy_signal if _usd_base else dxy_signal) * 0.50 +
                  sp500_signal * 0.30 +
                  fg_signal    * 0.20)
         note = f"DXY={dxy:.1f}"

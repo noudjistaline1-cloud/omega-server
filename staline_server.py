@@ -384,6 +384,10 @@ from math import tanh, sqrt, log
 import time
 from time import time
 from collections import deque, defaultdict
+try:
+    import MARKET_MEMORY as _MM   # [MM-1.0] mémoire réelle du marché 2010-2026 + décision finale à 3 sources
+except Exception as _mm_err:     # le serveur démarre même si le module manque
+    _MM = None
 
 # [FIX-XAU-SCOPE] Cache module-level pour _fetch_xau_sources (corrige UnboundLocalError
 # "cannot access local variable '_fetch_xau_sources'" — l'ancien code définissait une
@@ -10251,6 +10255,13 @@ def _score_macro(symbol: str, req_dir: str, macro: Dict) -> Dict:
 # ================================================================================
 
 def _score_hist(symbol: str, hour_utc: int, req_dir: str) -> Dict:
+    # [MM-1.0] P2 = mémoire réelle du marché (heure UTC + jour), écart à 0,5 faible par construction
+    if _MM is not None:
+        try:
+            _mm = _MM.hist_score_for(symbol, req_dir, int(hour_utc) % 24, None)
+            if _mm: return _mm
+        except Exception:
+            pass
     # [SRV-FIX-8] Si stats_10y.json absent → score NEUTRE 0.50, PAS les trades perso
     # Ancien comportement: utilisait _REAL_STATS comme proxy → polluait P2 avec données P3
     # Correct: P2 sans données = on ne sait pas = 0.50 neutre
@@ -10649,6 +10660,33 @@ def fusion_gate(req, score_result: Dict, macro_data: Dict) -> Dict:
 # ================================================================================
 # FASTAPI ROUTES
 # ================================================================================
+
+@app.get("/decision/{symbol}")
+def decision_ep(symbol: str, direction: str = "", p_current: float = -1.0, hour_utc: int = -1, weekday: int = -1,
+                price: float = 0.0, authorization: Optional[str] = Header(None)):
+    """[MM-1.0] DÉCISION FINALE à 3 sources — n'interdit JAMAIS un trade.
+    1) marché actuel (p_current envoyé par l'EA, poids 0,70) ; 2) mémoire réelle du marché 2010-2026 (0,20) ;
+    3) macro (proxy 5 j validé + World Scanner, 0,10). Retour : direction, p_buy, lot_mult (0,6-1,4), explications."""
+    if check_auth(authorization): return check_auth(authorization)
+    if _MM is None or not _MM.loaded():
+        return {"symbol": symbol, "action": "TRADE", "blocked": False, "direction": (direction or "NEUTRAL").upper(),
+                "lot_mult": 1.0, "note": "mémoire indisponible → neutre (aucun blocage)"}
+    ws = None
+    try:
+        key = _MM.canonical(symbol) or symbol
+        with _direction_lock:
+            st = dict(_direction_cache.get(key) or _direction_cache.get(symbol) or {})
+        if st.get("world_scanner") and not st.get("stale"):
+            ws = float(st.get("macro_conviction", 0.0))
+    except Exception:
+        ws = None
+    try:
+        return _MM.decide(symbol, direction or None, None if p_current < 0 else p_current,
+                          None if hour_utc < 0 else hour_utc, None if weekday < 0 else weekday, ws,
+                          None, price if price > 0 else None)
+    except Exception as e:
+        return {"symbol": symbol, "action": "TRADE", "blocked": False, "direction": (direction or "NEUTRAL").upper(),
+                "lot_mult": 1.0, "error": str(e)[:200]}
 
 @app.get("/direction/{symbol}")
 def direction_ep(symbol: str, authorization:Optional[str]=Header(None)):
