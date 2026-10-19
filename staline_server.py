@@ -2559,6 +2559,14 @@ logger.handlers=[_handler]; logger.propagate=False
 
 app=FastAPI(title="StalineMLServer V19.0 NEXUS TITAN FULL OPERATIONAL")
 
+# [JOURNAL-IA] instantané des données mondiales pour le journal de l'EA (GET /ia/snapshot) — module séparé,
+# chargé sans pouvoir bloquer le serveur s'il échoue.
+try:
+    from ia_snapshot import router as _ia_router
+    app.include_router(_ia_router)
+except Exception as _ia_e:
+    logger.warning(f"[JOURNAL-IA] module ia_snapshot non chargé : {_ia_e}")
+
 # [NOUVEAU-DIAGNOSTIC] Les logs de production montraient des "POST /score 422
 # Unprocessable Entity" occasionnels, sans aucun détail sur quel champ posait
 # problème (comportement par défaut de FastAPI : le détail part dans la
